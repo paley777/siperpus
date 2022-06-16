@@ -82,6 +82,7 @@ class ProfileController extends Controller
         $rules = [
             'id' => 'required',
             'nama' => 'required',
+            'nip' => 'required',
             'email' => 'required',
             'no_tlp' => 'required',
             'alamat' => 'required',
