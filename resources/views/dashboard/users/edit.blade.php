@@ -39,6 +39,16 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">NIP</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="nip" required autofocus
+                                        placeholder="Masukkan NIP..." value="{{ old('nip', $user->nip) }}">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">E-mail</p>
                                 </div>
                                 <div class="col-sm-9">

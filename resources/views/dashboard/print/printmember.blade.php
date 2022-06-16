@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cetak Kartu Petugas</title>
+    <title>Cetak Kartu Member</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -52,10 +52,11 @@
                                             <th>{{ $member->nama }}</th>
                                         </tr>
                                         <tr>
-                                            <th>Tempat, Tanggal Lahir</th>
+                                            <th>NISN</th>
                                             <th>:</th>
-                                            <th>{{ $member->tmpt_lahir }}, {{ $member->tgl_lahir }}</th>
+                                            <th>{{ $member->nisn }}</th>
                                         </tr>
+                                
                                         <tr>
                                             <th>Jenis Kelamin</th>
                                             <th>:</th>

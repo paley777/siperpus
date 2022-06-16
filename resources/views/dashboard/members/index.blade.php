@@ -40,6 +40,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Lengkap</th>
+                    <th scope="col">NISN</th>
                     <th scope="col">Tempat Lahir</th>
                     <th scope="col">Tanggal Lahir</th>
                     <th scope="col">Jenis Kelamin</th>
@@ -55,6 +56,7 @@
                     @foreach ($members as $key => $member)
                         <td>{{ $members->firstItem() + $key }}</td>
                         <td>{{ $member->nama }}</td>
+                        <td>{{ $member->nisn }}</td>
                         <td>{{ $member->tmpt_lahir }}</td>
                         <td>{{ $member->tgl_lahir }}</td>
                         <td>{{ $member->jns_kelamin }}</td>

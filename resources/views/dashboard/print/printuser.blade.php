@@ -52,14 +52,14 @@
                                             <th>{{ $user->nama }}</th>
                                         </tr>
                                         <tr>
+                                            <th>NIP</th>
+                                            <th>:</th>
+                                            <th>{{ $user->nip }}</th>
+                                        </tr>
+                                        <tr>
                                             <th>Jabatan</th>
                                             <th>:</th>
                                             <th>{{ $user->jabatan }}</th>
-                                        </tr>
-                                        <tr>
-                                            <th>Alamat</th>
-                                            <th>:</th>
-                                            <th>{{ $user->alamat }}</th>
                                         </tr>
                                         <tr>
                                             <th>Nomor Telepon</th>

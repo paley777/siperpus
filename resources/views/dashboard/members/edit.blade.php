@@ -39,6 +39,16 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">NISN</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="nisn" required autofocus
+                                        value="{{ old('nisn', $member->nisn) }}">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">Tempat Lahir</p>
                                 </div>
                                 <div class="col-sm-9">

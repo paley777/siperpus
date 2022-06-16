@@ -41,6 +41,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama Lengkap</th>
+                    <th scope="col">NIP</th>
                     <th scope="col">Jabatan</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">Nomor Telepon</th>
@@ -54,6 +55,7 @@
                     @foreach ($users as $key => $user)
                         <td>{{ $users->firstItem() + $key }}</td>
                         <td>{{ $user->nama }}</td>
+                        <td>{{ $user->nip }}</td>
                         <td>{{ $user->jabatan }}</td>
                         <td>{{ $user->alamat }}</td>
                         <td>{{ $user->no_tlp }}</td>

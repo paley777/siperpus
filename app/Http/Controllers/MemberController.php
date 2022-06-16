@@ -49,6 +49,7 @@ class MemberController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
+            'nisn' => 'required',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'jns_kelamin' => 'required',
@@ -102,6 +103,7 @@ class MemberController extends Controller
         $rules = [
             'id' => 'required',
             'nama' => 'required',
+            'nisn' => 'required',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'jns_kelamin' => 'required',

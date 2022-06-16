@@ -28,6 +28,16 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">NISN</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="nisn" required
+                                        placeholder="Masukkan NISN...">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">Tempat Lahir</p>
                                 </div>
                                 <div class="col-sm-9">
@@ -86,7 +96,8 @@
                                     <p class="mb-0">Jenis Keanggotaan</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input class="form-check-input" type="radio" name="jns_anggota" value="Guru" checked>
+                                    <input class="form-check-input" type="radio" name="jns_anggota" value="Guru"
+                                        checked>
                                     <label class="form-check-label">
                                         Guru
                                     </label>
