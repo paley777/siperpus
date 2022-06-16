@@ -49,13 +49,13 @@ class MemberController extends Controller
     {
         $validatedData = $request->validate([
             'nama' => 'required',
-            'nisn' => 'required',
+            'nisn' => 'required|unique:members',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'jns_kelamin' => 'required',
             'jns_anggota' => 'required',
             'alamat' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|unique:members',
             'nama_gambar' => 'image|file|max:50000',
         ]);
         if ($request->file('nama_gambar')) {
@@ -103,13 +103,13 @@ class MemberController extends Controller
         $rules = [
             'id' => 'required',
             'nama' => 'required',
-            'nisn' => 'required',
+            'nisn' => 'required|unique:members',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'jns_kelamin' => 'required',
             'jns_anggota' => 'required',
             'alamat' => 'required',
-            'no_hp' => 'required',
+            'no_hp' => 'required|unique:members',
             'nama_gambar' => 'image|file|max:50000',
         ];
         $validatedData = $request->validate($rules);

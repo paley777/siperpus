@@ -42,7 +42,7 @@ class RakController extends Controller
     public function store(StoreRakRequest $request)
     {
         $validatedData = $request->validate([
-            'kategori' => 'required',
+            'kategori' => 'required|unique:raks',
         ]);
         Rak::create($validatedData);
 
@@ -85,7 +85,7 @@ class RakController extends Controller
     {
         $rules = [
             'id' => 'required',
-            'kategori' => 'required',
+            'kategori' => 'required|unique:raks',
         ];
         $validatedData = $request->validate($rules);
         Rak::where('id', $validatedData['id'])->update($validatedData);

@@ -48,8 +48,8 @@ class BookController extends Controller
     {
         $validatedData = $request->validate([
             'rak_id' => 'required',
-            'judul' => 'required',
-            'no_barcode' => 'required',
+            'judul' => 'required|unique:books',
+            'no_barcode' => 'required|unique:books',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
@@ -98,8 +98,8 @@ class BookController extends Controller
         $rules = [
             'id' => 'required',
             'rak_id' => 'required',
-            'judul' => 'required',
-            'no_barcode' => 'required',
+            'judul' => 'required|unique:books',
+            'no_barcode' => 'required|unique:books',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
