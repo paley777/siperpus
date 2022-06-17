@@ -6,7 +6,12 @@
             <div class="col">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <img class="img-preview rounded-circle img-fluid" style="width: 150px;">
+                        @if ($user->nama_gambar)
+                            <img src="{{ asset('storage/' . $user->nama_gambar) }}"
+                                class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                        @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                        @endif
                         <p class="text-muted mb-1">Preview Profile</p>
                     </div>
                 </div>
@@ -22,7 +27,7 @@
                                     <p class="mb-0">ID.</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="id" required autofocus
+                                    <input type="text" class="form-control" name="id" required
                                         value="{{ old('id', $user->id) }}" readonly>
                                 </div>
                             </div>
@@ -42,7 +47,7 @@
                                     <p class="mb-0">NIP</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="nip" required autofocus
+                                    <input type="text" class="form-control" name="nip" required
                                         placeholder="Masukkan NIP..." value="{{ old('nip', $user->nip) }}">
                                 </div>
                             </div>
@@ -52,7 +57,7 @@
                                     <p class="mb-0">E-mail</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="email" class="form-control" name="email" required autofocus
+                                    <input type="email" class="form-control" name="email" required
                                         placeholder="Masukkan e-mail..." value="{{ old('email', $user->email) }}">
                                 </div>
                             </div>
@@ -62,7 +67,7 @@
                                     <p class="mb-0">Nomor Telepon</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="no_tlp" required autofocus
+                                    <input type="text" class="form-control" name="no_tlp" required
                                         placeholder="Masukkan Nomor Telepon..."
                                         value="{{ old('no_tlp', $user->no_tlp) }}">
                                 </div>
@@ -73,7 +78,7 @@
                                     <p class="mb-0">Alamat</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="alamat" required autofocus
+                                    <input type="text" class="form-control" name="alamat" required
                                         placeholder="Masukkan Alamat..." value="{{ old('alamat', $user->alamat) }}">
                                 </div>
                             </div>
@@ -83,7 +88,7 @@
                                     <p class="mb-0">Jabatan</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="jabatan" required autofocus
+                                    <input type="text" class="form-control" name="jabatan" required
                                         placeholder="Masukkan Jabatan..." value="{{ old('jabatan', $user->jabatan) }}">
                                 </div>
                             </div>
@@ -93,7 +98,7 @@
                                     <p class="mb-0">Password yang Baru</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="password" required autofocus value="">
+                                    <input type="text" class="form-control" name="password" required>
                                 </div>
                             </div>
                             <hr>

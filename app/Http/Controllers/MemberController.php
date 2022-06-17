@@ -103,24 +103,32 @@ class MemberController extends Controller
         $rules = [
             'id' => 'required',
             'nama' => 'required',
-            'nisn' => 'required|unique:members',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
             'jns_kelamin' => 'required',
             'jns_anggota' => 'required',
             'alamat' => 'required',
-            'no_hp' => 'required|unique:members',
             'nama_gambar' => 'image|file|max:50000',
         ];
-        $validatedData = $request->validate($rules);
+
+        if ($request->nisn != $member->nisn) {
+            $rules['nisn'] = 'required|unique:members';
+        }
+        if ($request->no_hp != $member->no_hp) {
+            $rules['no_hp'] = 'required|unique:members';
+        }
+
+        if ($request->file('nama_gambar')) {
+            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+        }
 
         if ($request->file('nama_gambar')) {
             if ($member->nama_gambar) {
                 Storage::delete($member['nama_gambar']);
             }
-
             $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
         }
+        $validatedData = $request->validate($rules);
         Member::where('id', $validatedData['id'])->update($validatedData);
 
         return redirect('/dashboard/members')->with('success', 'Anggota telah diubah!.');

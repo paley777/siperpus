@@ -8,45 +8,36 @@
 
 </head>
 
-<body>
+<body style="margin-left: 0cm;">
 
     <center>
         <h5>Laporan Transaksi SMP Negeri 1 Kota Bengkulu</h4>
             <h6>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu, Bengkulu 38114
         </h5>
     </center>
-    <table class="table table-bordered border-primary">
+    <table class="table table-bordered border-primary px-0">
         <thead>
             <tr>
 
-                <th scope="col">Buku yang Dipinjam</th>
-                <th scope="col">Nama Petugas</th>
-                <th scope="col">Nama Peminjam</th>
-                <th scope="col">Tanggal Peminjaman</th>
-                <th scope="col">Tenggat Waktu</th>
-                <th scope="col">Tanggal Pengembalian</th>
-                <th scope="col">Status</th>
-                <th scope="col">Denda</th>
-                <th scope="col">Jumlah Pinjam</th>
-                <th scope="col">Jumlah Hari</th>
+                <th scope="col-2">Buku yang Dipinjam</th>
+                <th scope="col-2">Nama Peminjam</th>
+                <th scope="col-2">Tanggal Peminjaman</th>
+                <th scope="col-2">Tanggal Pengembalian</th>
+                <th scope="col-2">Denda</th>
+                <th scope="col-2">Jumlah Pinjam</th>
 
             </tr>
         </thead>
         <tbody>
             <tr>
-  
+
                 @foreach ($transactions as $transaction)
-        
                     <td>{{ $transaction->book->judul }}</td>
-                    <td>{{ $transaction->user->nama }}</td>
                     <td>{{ $transaction->member->nama }}</td>
                     <td>{{ $transaction->tgl_pinjam }}</td>
-                    <td>{{ $transaction->tgl_kembali }}</td>
                     <td>{{ $transaction->tgl_pengembalian }}</td>
-                    <td>{{ $transaction->status }}</td>
                     <td>{{ $transaction->denda }}</td>
                     <td>{{ $transaction->jml_pinjam }}</td>
-                    <td>{{ $transaction->jml_hari }}</td>
             </tr>
             @endforeach
         </tbody>

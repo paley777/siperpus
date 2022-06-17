@@ -6,7 +6,12 @@
             <div class="col">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <img class="img-preview rounded-circle img-fluid" style="width: 150px;">
+                        @if ($member->nama_gambar)
+                            <img src="{{ asset('storage/' . $member->nama_gambar) }}"
+                                class="img-preview img-fluid mb-3 col-sm-5 d-block">
+                        @else
+                            <img class="img-preview img-fluid mb-3 col-sm-5">
+                        @endif
                         <p class="text-muted mb-1">Preview Profile</p>
                     </div>
                 </div>
@@ -62,8 +67,8 @@
                                     <p class="mb-0">Tanggal Lahir</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control" name="tgl_lahir" value="value="
-                                        {{ old('tgl_lahir', $member->tgl_lahir) }}"">
+                                    <input type="date" class="form-control" name="tgl_lahir"
+                                        value="{{ $member->tgl_lahir }}">
                                 </div>
                             </div>
                             <hr>
@@ -109,7 +114,8 @@
                                     <p class="mb-0">Jenis Keanggotaan</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input class="form-check-input" type="radio" name="jns_anggota" value="Guru" checked>
+                                    <input class="form-check-input" type="radio" name="jns_anggota" value="Guru"
+                                        checked>
                                     <label class="form-check-label">
                                         Guru
                                     </label>
@@ -125,6 +131,7 @@
                                     <p class="mb-0">Foto Profil</p>
                                 </div>
                                 <div class="col-sm-9">
+
                                     <input class="form-control" type="file" id="image" name="nama_gambar"
                                         onchange="previewImage()">
                                 </div>

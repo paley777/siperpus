@@ -82,12 +82,12 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">E-mail</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" name="email">
+                                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" required>
                                         </div>
                                         <div class="form-group mb-5">
                                             <label for="exampleInputPassword1">Password</label>
                                             <input type="password" class="form-control" id="exampleInputPassword1"
-                                                name="password">
+                                                name="password" required>
                                         </div>
                                         <button type="submit" class="btn btn-theme">Masuk</button>
                                     </form>
