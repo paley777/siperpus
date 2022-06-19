@@ -27,6 +27,9 @@
     </script>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-maxlength/1.10.0/bootstrap-maxlength.min.js"
+        integrity="sha512-04L+TAgzlDAaUpaEGriEBg/qEryUjw4GNL/FkxA3h621EFPycccO2Y8vNhvid9UhgGC/9+MHLAFwGythpvOAAQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>SIPerpus | SMP Negeri 1 Kota Bengkulu</title>
 </head>
 
