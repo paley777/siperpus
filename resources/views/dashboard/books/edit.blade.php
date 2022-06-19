@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="eksemplar"
-                                        value="{{ old('eksemplar', $book->eksemplar) }}" required>
+                                        value="{{ old('eksemplar', $book->eksemplar) }}" required id="intTextBox2">
                                 </div>
                             </div>
                             <hr>
@@ -142,7 +142,10 @@
         setInputFilter(document.getElementById("intTextBox1"), function(value) {
             return /^-?\d*$/.test(value);
         }, "Input Harus Angka!");
-      
+        setInputFilter(document.getElementById("intTextBox2"), function(value) {
+            return /^-?\d*$/.test(value);
+        }, "Input Harus Angka!");
+
 
         $('#intTextBox1').maxlength({
             alwaysShow: true,
