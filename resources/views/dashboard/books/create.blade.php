@@ -83,7 +83,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="eksemplar"
-                                        placeholder="Masukkan Eksemplar..." required>
+                                        placeholder="Masukkan Eksemplar..." required id="intTextBox2">
                                 </div>
                             </div>
                             <hr>
@@ -129,6 +129,9 @@
 
         // Install input filters.
         setInputFilter(document.getElementById("intTextBox1"), function(value) {
+            return /^-?\d*$/.test(value);
+        }, "Input Harus Angka!");
+        setInputFilter(document.getElementById("intTextBox2"), function(value) {
             return /^-?\d*$/.test(value);
         }, "Input Harus Angka!");
       

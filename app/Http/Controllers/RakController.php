@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rak;
+use App\Models\Book;
 use App\Http\Requests\StoreRakRequest;
 use App\Http\Requests\UpdateRakRequest;
 
@@ -102,6 +103,7 @@ class RakController extends Controller
     public function destroy(Rak $rak)
     {
         Rak::destroy($rak->id);
+        Book::where('rak_id', $rak->id)->delete();
         return redirect('/dashboard/raks')->with('success', 'Kategori Rak telah dihapus.');
     }
 }

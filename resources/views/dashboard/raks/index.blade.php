@@ -39,7 +39,7 @@
                                 @method('delete')
                                 @csrf
                                 <button class="badge bg-danger border-0"
-                                    onclick="return confirm('Anda Yakin?')">Hapus</button>
+                                    onclick="return confirm('Data buku dengan kategori yang sama akan terhapus, Anda yakin menghapus kategori ini?')">Hapus</button>
                             </form>
                         </td>
                 </tr>
