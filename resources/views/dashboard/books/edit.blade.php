@@ -14,8 +14,8 @@
                                     <p class="mb-0">ID.</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="id" value="{{ old('id', $book->id) }}"
-                                        readonly>
+                                    <input type="text" class="form-control" name="id"
+                                        value="{{ old('id', $book->id) }}" readonly>
                                 </div>
                             </div>
                             <hr>
@@ -53,7 +53,8 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="no_barcode" required
-                                        value="{{ old('no_barcode', $book->no_barcode) }}">
+                                        value="{{ old('no_barcode', $book->no_barcode) }}" id="intTextBox1"
+                                        maxlength="13">
                                 </div>
                             </div>
                             <hr>
@@ -107,4 +108,51 @@
             </div>
         </div>
     </section>
+    <script>
+        // Restricts input for the given textbox to the given inputFilter.
+        function setInputFilter(textbox, inputFilter, errMsg) {
+            ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop", "focusout"].forEach(
+                function(event) {
+                    textbox.addEventListener(event, function(e) {
+                        if (inputFilter(this.value)) {
+                            // Accepted value
+                            if (["keydown", "mousedown", "focusout"].indexOf(e.type) >= 0) {
+                                this.classList.remove("input-error");
+                                this.setCustomValidity("");
+                            }
+                            this.oldValue = this.value;
+                            this.oldSelectionStart = this.selectionStart;
+                            this.oldSelectionEnd = this.selectionEnd;
+                        } else if (this.hasOwnProperty("oldValue")) {
+                            // Rejected value - restore the previous one
+                            this.classList.add("input-error");
+                            this.setCustomValidity(errMsg);
+                            this.reportValidity();
+                            this.value = this.oldValue;
+                            this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                        } else {
+                            // Rejected value - nothing to restore
+                            this.value = "";
+                        }
+                    });
+                });
+        }
+
+        // Install input filters.
+        setInputFilter(document.getElementById("intTextBox1"), function(value) {
+            return /^-?\d*$/.test(value);
+        }, "Input Harus Angka!");
+      
+
+        $('#intTextBox1').maxlength({
+            alwaysShow: true,
+            threshold: 10,
+            warningClass: "label label-warning label-rounded label-inline",
+            limitReachedClass: "label label-success label-rounded label-inline",
+            separator: ' angka dari ',
+            preText: 'Kamu mengetik ',
+            postText: ' angka tersedia.',
+            validate: true
+        });
+    </script>
 @endsection
