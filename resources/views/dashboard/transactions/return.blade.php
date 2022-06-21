@@ -60,9 +60,9 @@
                                     <p class="mb-0">Tenggat Pengembalian</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control" name="tgl_kembali" value="<?php
-                                    echo date('Y-m-d', strtotime($transaction->tgl_pinjam . ' + 7 day')); ?>"
-                                        readonly>
+                                    <input type="date" class="form-control" name="tgl_kembali"
+                                        value="<?php
+                                        echo date('Y-m-d', strtotime($transaction->tgl_pinjam . ' + 7 day')); ?>" readonly>
                                 </div>
                             </div>
                             <hr>
@@ -97,7 +97,9 @@
                                     </div>
                                     <div class="col-sm-9">
                                         <input type="date" class="form-control" id="kembali" name="tgl_pengembalian"
-                                            value="<?php echo date('Y-m-d'); ?>" onchange="PinjamFunction()">
+                                            value="<?php echo date('Y-m-d'); ?>" min="<?php
+                                            echo date('Y-m-d', strtotime($transaction->tgl_pinjam . ' + 7 day')); ?>"
+                                            onchange="PinjamFunction()">
                                     </div>
                                 </div>
                                 <hr>
@@ -116,7 +118,8 @@
                                         <p class="mb-0">Denda Rp.2000/Hari(Maksimal 7 Hari Peminjaman) </p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="denda" name="denda" required readonly>
+                                        <input type="text" class="form-control" id="denda" name="denda" required
+                                            readonly>
                                     </div>
                                 </div>
                             </div>
