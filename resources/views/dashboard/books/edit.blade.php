@@ -24,7 +24,7 @@
                                     <p class="mb-0">Kategori</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <select class="form-select" name="rak_id">
+                                    <select class="form-select" id="kategori" name="rak_id">
                                         @foreach ($raks as $rak)
                                             @if (old('rak_id', $book->rak_id) == $rak->id)
                                                 <option value="{{ $rak->id }}" selected>{{ $rak->kategori }}
@@ -156,6 +156,13 @@
             preText: 'Kamu mengetik ',
             postText: ' angka tersedia.',
             validate: true
+        });
+    </script>
+     <script>
+        $(document).ready(function() {
+            $('#kategori').selectize({
+                sortField: 'text'
+            });
         });
     </script>
 @endsection
