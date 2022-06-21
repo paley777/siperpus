@@ -11,13 +11,13 @@
         <div class="accordion mb-5" id="accordionPanelsStayOpenExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
                         aria-controls="panelsStayOpen-collapseOne">
                         Bagaimana cara meminjam buku di perpustakaan?
                     </button>
                 </h2>
-                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
                     aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
                         <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
