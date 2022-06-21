@@ -18,6 +18,7 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet" />
+        
     <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
     <link rel="stylesheet" href="/css/styles.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
