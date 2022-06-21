@@ -38,9 +38,32 @@
                         @csrf
                         <div class="input-group mb-3">
                             <input type="file" class="form-control" name="file" required>
+                            <button type="submit " class="btn btn-primary">Import</button>
                         </div>
-                        <button type="submit" class="btn btn-primary">Import</button>
+
                     </form>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        Lihat Contoh Format Excel
+                    </button>
+                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header text-black">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Format Excel</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{{ asset('storage/images/import.png') }}"
+                                     style="width: 1080px;">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary text-white" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <a href="/dashboard/books/create" class="btn btn-lg btn-primary">Tambah Buku</a>

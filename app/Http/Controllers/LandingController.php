@@ -49,7 +49,8 @@ class LandingController extends Controller
         $id = Rak::where('kategori', $request['kategori'])->value('id');
         return view('landing.paket.index', [
             'active' => 'opac',
-            'books' => Book::where('rak_id', $id)->get(),
+            'books' => Book::where('rak_id', $id)
+                ->paginate(10),
         ]);
     }
 
