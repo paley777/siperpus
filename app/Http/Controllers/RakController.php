@@ -86,8 +86,12 @@ class RakController extends Controller
     {
         $rules = [
             'id' => 'required',
-            'kategori' => 'required|unique:raks',
         ];
+
+        if ($request->kategori != $rak->kategori) {
+            $rules['kategori'] = 'required|unique:raks';
+        }
+
         $validatedData = $request->validate($rules);
         Rak::where('id', $validatedData['id'])->update($validatedData);
 

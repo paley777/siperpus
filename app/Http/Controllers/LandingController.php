@@ -20,7 +20,7 @@ class LandingController extends Controller
     {
         return view('landing.opac', [
             'active' => 'opac',
-            'books' => Book::latest()
+            'books' => Book::orderBy('rak_id', 'desc')
                 ->filter(request(['search']))
                 ->paginate(7)
                 ->withQueryString(),
@@ -38,14 +38,18 @@ class LandingController extends Controller
         ]);
     }
 
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function paket(Request $request)
     {
-      
+        $id = Rak::where('kategori', $request['kategori'])->value('id');
         return view('landing.paket.index', [
             'active' => 'opac',
-            'books' => Book::all(),
-            'request' => $request['kategori'],
-            'rak' => Rak::all(),
+            'books' => Book::where('rak_id', $id)->get(),
         ]);
     }
 

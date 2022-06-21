@@ -15,26 +15,13 @@
     </section>
     <div class="album py-5 bg-light">
         <div class="container">
-            <h1 class="fw-light text-center">Buku Paket Kelas VII, VIII, IX</h1>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                            src="{{ asset('storage/images/kelas7.jpg') }}">
-                        </img>
-                        <div class="card-body">
-                            <p class="card-text">Buku Paket Kelas VII</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h1 class="fw-light text-center">Buku Paket</h1>
             <h1 class="fw-light text-center mt-5">Daftar Buku</h1>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <table class="table table-bordered border-primary">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Kategori Rak</th>
                             <th scope="col">Judul Buku</th>
                             <th scope="col">Barcode</th>
                             <th scope="col">Pengarang</th>
@@ -47,21 +34,16 @@
                     <tbody>
                         <tr>
                             <?php $a = 1; ?>
-                            @foreach ($books as $key => $book)
-                                @if ($book->rak->kategori === $request)
-                                    <td>{{ $a++ }}</td>
-                                    <td>{{ $book->rak->kategori }}</td>
-                                    <td>{{ $book->judul }}</td>
-                                    <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'C128', 1.4, 50) !!}</td>
-                                    <td>{{ $book->pengarang }}</td>
-                                    <td>{{ $book->penerbit }}</td>
-                                    <td>{{ $book->thn_terbit }}</td>
-                                    <td>{{ $book->eksemplar }}</td>
-                               
-                                @endif
+                            @foreach ($books as $book)
+                                <td>{{ $a++ }}</td>
+                                <td>{{ $book->judul }}</td>
+                                <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'C128', 1.4, 50) !!}</td>
+                                <td>{{ $book->pengarang }}</td>
+                                <td>{{ $book->penerbit }}</td>
+                                <td>{{ $book->thn_terbit }}</td>
+                                <td>{{ $book->eksemplar }}</td>
                         </tr>
                         @endforeach
-
                     </tbody>
                 </table>
             </div>

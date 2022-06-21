@@ -47,7 +47,7 @@
                                 <form action="/opac/paket" method="post" class="d-inline">
                                     @csrf
                                     <input type='hidden' name='kategori' value="Buku Paket Kelas 7">
-                                    <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
+                                    <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
                                 </form>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
 
                                 <form action="/opac/paket" method="post" class="d-inline">
                                     @csrf
-                                    <input type='hidden' name='kategori' value='Buku Paket Kelas 8'>
+                                    <input type='hidden' name='kategori' value="Buku Paket Kelas 8">
                                     <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
                                 </form>
                             </div>
@@ -82,7 +82,7 @@
 
                                 <form action="/opac/paket" method="post" class="d-inline">
                                     @csrf
-                                    <input type='hidden' name='kategori' value='Buku Paket Kelas 9'>
+                                    <input type='hidden' name='kategori' value="Buku Paket Kelas 9">
                                     <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
                                 </form>
                             </div>
@@ -111,7 +111,7 @@
                         <tr>
                             @foreach ($books as $key => $book)
                                 <td>{{ $books->firstItem() + $key }}</td>
-                                <td>{{ $book->rak->kategori }}</td>
+                                <td>{{ $book->rak->kategori ?? 'None' }}</td>
                                 <td>{{ $book->judul }}</td>
                                 <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
                                 <td>{{ $book->pengarang }}</td>
