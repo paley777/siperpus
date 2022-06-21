@@ -13,7 +13,7 @@
                                     <p class="mb-0">Buku yang Dipinjam</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <select class="form-select" name="book_id">
+                                    <select class="form-select" id="buku" name="book_id">
                                         @foreach ($books as $book)
                                             <option value="{{ $book->id }}">{{ $book->judul }} | Eksemplar
                                                 Tersedia : {{ $book->eksemplar }}</option>
@@ -36,7 +36,7 @@
                                     <p class="mb-0">Nama Peminjam</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <select class="form-select" name="member_id">
+                                    <select class="form-select" id="peminjam" name="member_id">
                                         @foreach ($members as $member)
                                             @if (old('member_id') == $member->id)
                                                 <option value="{{ $member->id }}" selected>{{ $member->nama }}
@@ -64,10 +64,10 @@
                                     <p class="mb-0">Tenggat Pengembalian</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control" name="tgl_kembali" value="<?php
-                                    $Date1 = date('Y-m-d');
-                                    echo date('Y-m-d', strtotime($Date1 . ' + 7 day')); ?>"
-                                        readonly>
+                                    <input type="date" class="form-control" name="tgl_kembali"
+                                        value="<?php
+                                        $Date1 = date('Y-m-d');
+                                        echo date('Y-m-d', strtotime($Date1 . ' + 7 day')); ?>" readonly>
                                 </div>
                             </div>
                             <hr>
@@ -77,7 +77,8 @@
                                         tersedia)</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="jml_pinjam" required id="eksemplarubah">
+                                    <input type="text" class="form-control" name="jml_pinjam" required
+                                        id="eksemplarubah">
                                 </div>
                             </div>
                             <hr>
@@ -122,7 +123,8 @@
                                         <p class="mb-0">Denda Rp.2000/Hari(Maksimal 7 Hari Peminjaman) </p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="denda" name="denda" required readonly>
+                                        <input type="text" class="form-control" id="denda" name="denda" required
+                                            readonly>
                                     </div>
                                 </div>
                             </div>
@@ -168,5 +170,17 @@
             var eksemplarawal = document.getElementById("eksemplarawal").value;
             var eksemplarubah = document.getElementById("eksemplarubah").value;
         }
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('#buku').selectize({
+                sortField: 'text'
+            });
+        });
+        $(document).ready(function() {
+            $('#peminjam').selectize({
+                sortField: 'text'
+            });
+        });
     </script>
 @endsection
