@@ -22,7 +22,7 @@ class BookController extends Controller
     {
         return view('dashboard.books.index', [
             'active' => 'books',
-            'books' => Book::latest()
+            'books' => Book::orderBy('rak_id', 'desc')
                 ->filter(request(['search']))
                 ->paginate(7)
                 ->withQueryString(),
@@ -37,7 +37,7 @@ class BookController extends Controller
     public function create()
     {
         return view('dashboard.books.create', [
-            'raks' => Rak::all(),
+            'raks' => Rak::orderBy('kategori', 'asc')->get(),
             'active' => 'books',
         ]);
     }
@@ -84,7 +84,7 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         return view('dashboard.books.edit', [
-            'raks' => Rak::all(),
+            'raks' => Rak::orderBy('kategori', 'asc')->get(),
             'book' => $book,
             'active' => 'books',
         ]);
@@ -102,13 +102,18 @@ class BookController extends Controller
         $rules = [
             'id' => 'required',
             'rak_id' => 'required',
-            'judul' => 'required|unique:books',
-            'no_barcode' => 'required|unique:books',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
             'eksemplar' => 'required',
         ];
+        if ($request->judul != $book->judul) {
+            $rules['judul'] = 'required|unique:books';
+        }
+        if ($request->no_barcode != $book->no_barcode) {
+            $rules['no_barcode'] = 'required|unique:books';
+        }
+
         $validatedData = $request->validate($rules);
         Book::where('id', $validatedData['id'])->update($validatedData);
 

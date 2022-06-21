@@ -14,8 +14,8 @@
                                     <p class="mb-0">ID.</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="id" value="{{ old('id', $rak->id) }}"
-                                        readonly>
+                                    <input type="text" class="form-control" name="id"
+                                        value="{{ old('id', $rak->id) }}" readonly>
                                 </div>
                             </div>
                             <hr>
@@ -24,8 +24,13 @@
                                     <p class="mb-0">Nama Kategori</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="kategori" required
-                                        value="{{ old('kategori', $rak->kategori) }}">
+                                    <input type="text" class="form-control @error('kategori') is-invalid @enderror"
+                                        name="kategori" required value="{{ old('kategori', $rak->kategori) }}">
+                                    @error('kategori')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>

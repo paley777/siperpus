@@ -1,6 +1,13 @@
 @extends('dashboard.layouts.main')
 
 @section('container')
+    <style>
+        .option {
+            height: 50px;
+            overflow: auto;
+        }
+    </style>
+
     <section>
         <div class="row py-5">
             <div class="col-lg-8">
@@ -16,10 +23,10 @@
                                     <select class="form-select" name="rak_id">
                                         @foreach ($raks as $rak)
                                             @if (old('rak_id') == $rak->id)
-                                                <option value="{{ $rak->id }}" selected>{{ $rak->kategori }}
+                                                <option class="option" value="{{ $rak->id }}" selected>{{ $rak->kategori }}
                                                 </option>
                                             @else
-                                                <option value="{{ $rak->id }}">{{ $rak->kategori }}</option>
+                                                <option class="option" value="{{ $rak->id }}">{{ $rak->kategori }}</option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -31,8 +38,13 @@
                                     <p class="mb-0">Judul Buku</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="judul" required
-                                        placeholder="Masukkan Judul Buku...">
+                                    <input type="text" class="form-control @error('judul') is-invalid @enderror"
+                                        name="judul" required placeholder="Masukkan Judul Buku...">
+                                    @error('judul')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>
@@ -41,8 +53,14 @@
                                     <p class="mb-0">Nomor Barcode</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="no_barcode" required
-                                        placeholder="Masukkan Kode Barcode..." value="" id="intTextBox1" maxlength="13">
+                                    <input type="text" class="form-control @error('no_barcode') is-invalid @enderror"
+                                        name="no_barcode" required placeholder="Masukkan Kode Barcode..." value=""
+                                        id="intTextBox1" maxlength="13">
+                                    @error('no_barcode')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <br>
@@ -73,7 +91,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" placeholder="Masukkan Tahun Terbit..."
-                                        name="thn_terbit" required>
+                                        name="thn_terbit" required id="intTextBox3">
                                 </div>
                             </div>
                             <hr>
@@ -134,7 +152,10 @@
         setInputFilter(document.getElementById("intTextBox2"), function(value) {
             return /^-?\d*$/.test(value);
         }, "Input Harus Angka!");
-      
+        setInputFilter(document.getElementById("intTextBox3"), function(value) {
+            return /^-?\d*$/.test(value);
+        }, "Input Harus Angka!");
+
 
         $('#intTextBox1').maxlength({
             alwaysShow: true,

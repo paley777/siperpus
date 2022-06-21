@@ -13,8 +13,13 @@
                                     <p class="mb-0">Nama Kategori</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="kategori" required
-                                        placeholder="Masukkan Nama Kategori...">
+                                    <input type="text" class="form-control @error('kategori') is-invalid @enderror"
+                                        name="kategori" required placeholder="Masukkan Nama Kategori...">
+                                    @error('kategori')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>
