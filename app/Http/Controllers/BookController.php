@@ -6,6 +6,10 @@ use App\Models\Book;
 use App\Models\Rak;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Imports\BookImport;
+use Maatwebsite\Excel\Facades\Excel;
+use Session;
+use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
@@ -122,5 +126,31 @@ class BookController extends Controller
         Book::destroy($book->id);
 
         return redirect('/dashboard/books')->with('success', 'Buku telah dihapus.');
+    }
+
+    public function import(Request $request)
+    {
+        // validasi
+        $this->validate($request, [
+            'file' => 'required|mimes:csv,xls,xlsx',
+        ]);
+
+        // menangkap file excel
+        $file = $request->file('file');
+
+        // membuat nama file unik
+        $nama_file = rand() . $file->getClientOriginalName();
+
+        // upload ke folder imports di dalam folder public
+        $file->move('imports', $nama_file);
+
+        // import data
+        Excel::import(new BookImport(), public_path('/imports/' . $nama_file));
+
+        // notifikasi dengan session
+        Session::flash('sukses', 'Data Buku Berhasil Diimport!');
+
+        // alihkan halaman kembali
+        return redirect('/dashboard/books');
     }
 }

@@ -59,3 +59,6 @@ Route::post('/dashboard/transactions/prosespengembalian', [TransactionController
 Route::post('/dashboard/users/print', [PrintController::class, 'print_user']);
 Route::post('/dashboard/members/print', [PrintController::class, 'print_member']);
 Route::post('/dashboard/books/print', [PrintController::class, 'print_book']);
+
+//Import Excel Books
+Route::post('/dashboard/books/import', [BookController::class, 'import'])->middleware('auth');

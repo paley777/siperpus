@@ -31,6 +31,16 @@
                             <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
+                    <form method="post" action="/dashboard/books/import" enctype="multipart/form-data">
+                        <div>
+                            <p>Input Data Buku dari file spreadsheet (.xlsx, .xls, .csv)</p>
+                        </div>
+                        @csrf
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="file" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                    </form>
                 </div>
             </div>
             <a href="/dashboard/books/create" class="btn btn-lg btn-primary">Tambah Buku</a>
@@ -53,9 +63,9 @@
                 <tr>
                     @foreach ($books as $key => $book)
                         <td>{{ $books->firstItem() + $key }}</td>
-                        <td>{{ $book->rak->kategori }}</td>
+                        <td>{{ $book->rak->kategori ?? 'None' }}</td>
                         <td>{{ $book->judul }}</td>
-                        <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13',3,70) !!}</td>
+                        <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
                         <td>{{ $book->pengarang }}</td>
                         <td>{{ $book->penerbit }}</td>
                         <td>{{ $book->thn_terbit }}</td>
