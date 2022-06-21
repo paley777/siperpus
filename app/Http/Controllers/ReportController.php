@@ -26,7 +26,7 @@ class ReportController extends Controller
     {
         $books = Book::all();
 
-        $pdf = PDF::loadview('book_pdf', ['books' => $books]);
+        $pdf = PDF::loadView('book_pdf', ['books' => $books]);
         return $pdf->download('laporan-buku.pdf');
     }
 
