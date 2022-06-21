@@ -45,53 +45,64 @@
             </div>
             <a href="/dashboard/books/create" class="btn btn-lg btn-primary">Tambah Buku</a>
         </div>
-        <table class="table table-bordered border-primary">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Kategori Rak</th>
-                    <th scope="col">Judul Buku</th>
-                    <th scope="col">Barcode</th>
-                    <th scope="col">Pengarang</th>
-                    <th scope="col">Penerbit</th>
-                    <th scope="col">Tahun Terbit</th>
-                    <th scope="col">Eksemplar</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    @foreach ($books as $key => $book)
-                        <td>{{ $books->firstItem() + $key }}</td>
-                        <td>{{ $book->rak->kategori ?? 'None' }}</td>
-                        <td>{{ $book->judul }}</td>
-                        <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
-                        <td>{{ $book->pengarang }}</td>
-                        <td>{{ $book->penerbit }}</td>
-                        <td>{{ $book->thn_terbit }}</td>
-                        <td>{{ $book->eksemplar }}</td>
-                        <td>
-                            <a href="/dashboard/books/{{ $book->id }}/edit" class="badge bg-warning border-0">Edit</a>
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered border-primary">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Kategori Rak</th>
+                            <th scope="col">Judul Buku</th>
+                            <th scope="col">Barcode</th>
+                            <th scope="col">Pengarang</th>
+                            <th scope="col">Penerbit</th>
+                            <th scope="col">Tahun Terbit</th>
+                            <th scope="col">Eksemplar</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            @foreach ($books as $key => $book)
+                                <td>{{ $books->firstItem() + $key }}</td>
+                                <td>{{ $book->rak->kategori ?? 'None' }}</td>
+                                <td>{{ $book->judul }}</td>
+                                <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
+                                <td>{{ $book->pengarang }}</td>
+                                <td>{{ $book->penerbit }}</td>
+                                <td>{{ $book->thn_terbit }}</td>
+                                <td>{{ $book->eksemplar }}</td>
+                                <td>
+                                    <a href="/dashboard/books/{{ $book->id }}/edit"
+                                        class="badge bg-warning border-0">Edit</a>
 
-                            <form action="/dashboard/books/print" method="post" class="d-inline" target="_blank">
-                                @csrf
-                                <input type='hidden' name='id' value='{{ $book->id }}'>
-                                <button class="badge bg-primary border-0" onclick="return confirm('Cetak Kartu?')">Cetak
-                                    Barcode</button>
-                            </form>
+                                    <form action="/dashboard/books/print" method="post" class="d-inline" target="_blank">
+                                        @csrf
+                                        <input type='hidden' name='id' value='{{ $book->id }}'>
+                                        <button class="badge bg-primary border-0"
+                                            onclick="return confirm('Cetak Kartu?')">Cetak
+                                            Barcode</button>
+                                    </form>
 
-                            <form action="/dashboard/books/{{ $book->id }}" method="post" class="d-inline">
-                                @method('delete')
-                                @csrf
-                                <button class="badge bg-danger border-0"
-                                    onclick="return confirm('Anda Yakin?')">Hapus</button>
-                            </form>
-                        </td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-center">
-            {{ $books->links() }} </div>
+                                    <form action="/dashboard/books/{{ $book->id }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="badge bg-danger border-0"
+                                            onclick="return confirm('Anda Yakin?')">Hapus</button>
+                                    </form>
+                                </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-center">
+                    {{ $books->links() }}
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
