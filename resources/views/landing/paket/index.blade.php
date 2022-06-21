@@ -34,8 +34,8 @@
                     <tbody>
                         <tr>
                             <?php $a = 1; ?>
-                            @foreach ($books as $book)
-                                <td>{{ $a++ }}</td>
+                            @foreach ($books as $key => $book)
+                                <td>{{ $books->firstItem() + $key }}</td>
                                 <td>{{ $book->judul }}</td>
                                 <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'C128', 1.4, 50) !!}</td>
                                 <td>{{ $book->pengarang }}</td>
@@ -46,6 +46,8 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="d-flex justify-content-center">
+                    {{ $books->links() }} </div>
             </div>
         </div>
     </div>
