@@ -37,6 +37,7 @@ pengembangannya menggunakan software MySQL Workbench.
 - Barcode generate and scan
 - Paginations
 - Search Data
+- Import Data via Spreadsheet
 
 ## Optimalisasi
 
