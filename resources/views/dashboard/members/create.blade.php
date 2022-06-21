@@ -31,8 +31,14 @@
                                     <p class="mb-0">NISN</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="nisn" required
-                                        placeholder="Masukkan NISN..." maxlength="10" id="intTextBox2">
+                                    <input type="text" class="form-control @error('nisn') is-invalid @enderror"
+                                        name="nisn" required placeholder="Masukkan NISN..." maxlength="10"
+                                        id="intTextBox2">
+                                    @error('nisn')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <br>
@@ -88,8 +94,14 @@
                                     <p class="mb-0">Nomor Telepon</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="intTextBox" class="form-control" name="no_hp" required
+                                    <input type="text" id="intTextBox"
+                                        class="form-control  @error('no_hp') is-invalid @enderror" name="no_hp" required
                                         maxlength="15">
+                                    @error('no_hp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <br>

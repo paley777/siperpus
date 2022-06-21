@@ -47,8 +47,14 @@
                                     <p class="mb-0">NISN</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" name="nisn" required autofocus
-                                        value="{{ old('nisn', $member->nisn) }}" maxlength="10" id="intTextBox2">
+                                    <input type="text" class="form-control @error('nisn') is-invalid @enderror"
+                                        name="nisn" required autofocus value="{{ old('nisn', $member->nisn) }}"
+                                        maxlength="10" id="intTextBox2">
+                                    @error('nisn')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>
@@ -104,8 +110,14 @@
                                     <p class="mb-0">Nomor Telepon</p>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="intTextBox" name="no_hp"
-                                        value="{{ old('no_hp', $member->no_hp) }}" maxlength="15" required>
+                                    <input type="text" class="form-control @error('no_hp') is-invalid @enderror"
+                                        id="intTextBox" name="no_hp" value="{{ old('no_hp', $member->no_hp) }}"
+                                        maxlength="15" required>
+                                    @error('no_hp')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                             <hr>
