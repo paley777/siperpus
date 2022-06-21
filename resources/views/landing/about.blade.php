@@ -155,8 +155,8 @@
             <div class="col">
                 <div class="p-3">
                     <h4 class="title">Kontak Kami</h4>
-                    <p><i class="bi bi-telephone"></i> 0896-3204-6116</p>
-                    <p><i class="bi bi-envelope"></i> valleryan1212@gmail.com</p>
+                    <p><i class="bi bi-telephone"></i> (0736) 21563 348008 </p>
+                    <p><i class="bi bi-envelope"></i> rsbismpngr1bkl@yahoo.com </p>
                 </div>
             </div>
         </div>
