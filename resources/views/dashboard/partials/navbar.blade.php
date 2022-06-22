@@ -2,7 +2,6 @@
     .navbar {
         background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgb(76, 121, 255));
     }
-
 </style>
 
 <nav class="navbar fixed-top navbar-dark navbar-expand-lg" style="background-color: #210b81;">
