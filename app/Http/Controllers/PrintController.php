@@ -15,6 +15,8 @@ class PrintController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
+
+     //PRINT KARTU PETUGAS
     public function print_user(Request $request)
     {
         return view('dashboard.print.printuser', [
@@ -22,6 +24,8 @@ class PrintController extends Controller
             'active' => 'users',
         ]);
     }
+
+    //PRINT KARTU ANGGOTA
     public function print_member(Request $request)
     {
         return view('dashboard.print.printmember', [
@@ -29,6 +33,8 @@ class PrintController extends Controller
             'active' => 'members',
         ]);
     }
+
+    //PRINT BARCODE
     public function print_book(Request $request)
     {
         return view('dashboard.print.printbook', [

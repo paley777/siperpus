@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
+    //TAMPILAN AWAL
     public function index()
     {
         return view('landing.index', [
@@ -16,6 +17,7 @@ class LandingController extends Controller
         ]);
     }
 
+    //OPAC
     public function opac()
     {
         return view('landing.opac', [
@@ -27,6 +29,7 @@ class LandingController extends Controller
         ]);
     }
 
+    //SCAN BARCODE
     public function barcode()
     {
         return view('landing.barcode', [
@@ -38,6 +41,7 @@ class LandingController extends Controller
         ]);
     }
 
+    
     /**
      * Update the specified resource in storage.
      *

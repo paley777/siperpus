@@ -162,7 +162,6 @@
                                 <hr>
                                 <button class="btn btn-primary" type="submit">Ubah Transaksi</button>
                             @endif
-
                         </form>
                     </div>
                 </div>

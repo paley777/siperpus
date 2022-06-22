@@ -24,7 +24,7 @@ class BookController extends Controller
             'active' => 'books',
             'books' => Book::orderBy('rak_id', 'desc')
                 ->filter(request(['search']))
-                ->paginate(7)
+                ->paginate(10)
                 ->withQueryString(),
         ]);
     }

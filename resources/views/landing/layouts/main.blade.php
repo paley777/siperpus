@@ -21,7 +21,6 @@
 </head>
 
 <body>
-
     @include('landing.partials.navbar')
     <div id="scrollspyHeading1">
         @yield('container')

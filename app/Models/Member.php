@@ -10,6 +10,7 @@ class Member extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
+
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
@@ -17,6 +18,7 @@ class Member extends Model
         });
     }
 
+    
     public function members()
     {
         return $this->hasMany(Transaction::class);

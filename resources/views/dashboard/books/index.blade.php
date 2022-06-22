@@ -98,7 +98,6 @@
                                 <td>
                                     <a href="/dashboard/books/{{ $book->id }}/edit"
                                         class="badge bg-warning border-0">Edit</a>
-
                                     <form action="/dashboard/books/print" method="post" class="d-inline" target="_blank">
                                         @csrf
                                         <input type='hidden' name='id' value='{{ $book->id }}'>

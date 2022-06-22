@@ -95,39 +95,6 @@
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="row" id="IfPinjam" style="display:none;">
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Tanggal Pengembalian</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <input type="date" class="form-control" id="kembali" name="tgl_pengembalian"
-                                            value="<?php echo date('Y-m-d'); ?>" onchange="PinjamFunction()">
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Total Hari Peminjaman</p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="hasil" name="jml_hari" required
-                                            readonly>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-0">Denda Rp.2000/Hari(Maksimal 7 Hari Peminjaman) </p>
-                                    </div>
-                                    <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="denda" name="denda" required
-                                            readonly>
-                                    </div>
-                                </div>
-                            </div>
                             <hr>
                             <button class="btn btn-primary" type="submit">Tambahkan Transaksi</button>
                         </form>
@@ -139,38 +106,7 @@
             </div>
         </div>
     </section>
-    <script>
-        function yesnoCheck(that) {
-            if (that.value == "PENGEMBALIAN") {
 
-                document.getElementById("IfPinjam").style.display = "block";
-            } else {
-                document.getElementById("IfPinjam").style.display = "none";
-            }
-        }
-
-        function PinjamFunction() {
-            var datepinjam = new Date($('#pinjam').val());
-            var datekembali = new Date($('#kembali').val());
-
-            var difference = datekembali.getTime() - datepinjam.getTime();
-            var Difference_In_Days = difference / (1000 * 3600 * 24);
-            document.getElementById("hasil").value = Difference_In_Days;
-
-            if (Difference_In_Days > 7) {
-                var haridenda = Difference_In_Days - 7;
-                var denda = 2000 * haridenda;
-                document.getElementById("denda").value = denda;
-            } else {
-                document.getElementById("denda").value = 0;
-            }
-        }
-
-        function EksemplarFunction() {
-            var eksemplarawal = document.getElementById("eksemplarawal").value;
-            var eksemplarubah = document.getElementById("eksemplarubah").value;
-        }
-    </script>
     <script>
         $(document).ready(function() {
             $('#buku').selectize({

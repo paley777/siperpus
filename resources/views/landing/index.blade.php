@@ -257,8 +257,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle"
-                            src="{{ asset('storage/images/1.jpg') }}" />
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/1.jpg') }}" />
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
@@ -295,8 +294,8 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle"
-                            src="{{ asset('storage/images/2.jpg') }}" alt="..." />
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/2.jpg') }}"
+                            alt="..." />
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">

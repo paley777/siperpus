@@ -23,6 +23,7 @@ class Book extends Model
             return $query->where('no_barcode', 'like', '%' . $barcode . '%');
         });
     }
+
     public function rak()
     {
         return $this->belongsTo(Rak::class);

@@ -45,6 +45,7 @@ class User extends Authenticatable
             return $query->where('nama', 'like', '%' . $search . '%');
         });
     }
+    
     public function transactions()
     {
         return $this->hasMany(Transaction::class);

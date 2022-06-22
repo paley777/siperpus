@@ -11,6 +11,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\RakController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ReportController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,9 +57,9 @@ Route::post('/dashboard/transactions/createpengembalian', [TransactionController
 Route::post('/dashboard/transactions/prosespengembalian', [TransactionController::class, 'prosespengembalian'])->middleware('auth');
 
 //Print
-Route::post('/dashboard/users/print', [PrintController::class, 'print_user']);
-Route::post('/dashboard/members/print', [PrintController::class, 'print_member']);
-Route::post('/dashboard/books/print', [PrintController::class, 'print_book']);
+Route::post('/dashboard/users/print', [PrintController::class, 'print_user'])->middleware('auth');
+Route::post('/dashboard/members/print', [PrintController::class, 'print_member'])->middleware('auth');
+Route::post('/dashboard/books/print', [PrintController::class, 'print_book'])->middleware('auth');
 
 //Import Excel Books
 Route::post('/dashboard/books/import', [BookController::class, 'import'])->middleware('auth');

@@ -22,6 +22,7 @@ class ReportController extends Controller
             'active' => 'reports',
         ]);
     }
+
     public function books()
     {
         $books = Book::all();
@@ -37,6 +38,7 @@ class ReportController extends Controller
         $pdf = PDF::loadview('user_pdf', ['users' => $users]);
         return $pdf->download('laporan-user.pdf');
     }
+    
     public function members()
     {
         $members = Member::all();
