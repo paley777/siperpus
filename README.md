@@ -1,6 +1,6 @@
 
 ![Logo](https://i.ibb.co/5ThtRFq/Screenshot-2022-06-17-193018.png)
-
+[![CodeQL](https://github.com/paley777/siperpus/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paley777/siperpus/actions/workflows/codeql-analysis.yml)
 
 # Sistem Informasi Perpustakaan (SIPerpus)
 
