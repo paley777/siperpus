@@ -23,10 +23,12 @@
                                     <select class="form-select" id="kategori" name="rak_id">
                                         @foreach ($raks as $rak)
                                             @if (old('rak_id') == $rak->id)
-                                                <option class="option" value="{{ $rak->id }}" selected>{{ $rak->kategori }}
+                                                <option class="option" value="{{ $rak->id }}" selected>
+                                                    {{ $rak->kategori }}
                                                 </option>
                                             @else
-                                                <option class="option" value="{{ $rak->id }}">{{ $rak->kategori }}</option>
+                                                <option class="option" value="{{ $rak->id }}">{{ $rak->kategori }}
+                                                </option>
                                             @endif
                                         @endforeach
                                     </select>
@@ -168,7 +170,7 @@
             validate: true
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function() {
             $('#kategori').selectize({
                 sortField: 'text'
