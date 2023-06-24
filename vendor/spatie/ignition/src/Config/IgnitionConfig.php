@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Arrayable;
 use Spatie\Ignition\Contracts\ConfigManager;
 use Throwable;
 
+/** @implements Arrayable<string, string|null|bool|array<string, mixed>> */
 class IgnitionConfig implements Arrayable
 {
     private ConfigManager $manager;
@@ -36,6 +37,7 @@ class IgnitionConfig implements Arrayable
     private function initConfigManager(): ConfigManager
     {
         try {
+            /** @phpstan-ignore-next-line  */
             return app(ConfigManager::class);
         } catch (Throwable) {
             return new FileConfigManager();
@@ -121,7 +123,7 @@ class IgnitionConfig implements Arrayable
         return (bool)($this->options['enable_runnable_solutions'] ?? false);
     }
 
-    /** @return array<string, mixed> */
+    /** @return array<string, string|null|bool|array<string, mixed>> */
     public function toArray(): array
     {
         return [
@@ -168,6 +170,10 @@ class IgnitionConfig implements Arrayable
                     'label' => 'PhpStorm',
                     'url' => 'phpstorm://open?file=%path&line=%line',
                 ],
+                'phpstorm-remote' => [
+                    'label' => 'PHPStorm Remote',
+                    'url' => 'javascript:r = new XMLHttpRequest;r.open("get", "http://localhost:63342/api/file/%path:%line");r.send()',
+                ],
                 'idea' => [
                     'label' => 'Idea',
                     'url' => 'idea://open?file=%path&line=%line',
@@ -188,13 +194,17 @@ class IgnitionConfig implements Arrayable
                     'label' => 'VS Code Insiders Remote',
                     'url' => 'vscode-insiders://vscode-remote/%path:%line',
                 ],
+                'vscodium' => [
+                    'label' => 'VS Codium',
+                    'url' => 'vscodium://file/%path:%line',
+                ],
                 'atom' => [
                     'label' => 'Atom',
                     'url' => 'atom://core/open/file?filename=%path&line=%line',
                 ],
                 'nova' => [
                     'label' => 'Nova',
-                    'url' => 'nova://core/open/file?filename=%path&line=%line',
+                    'url' => 'nova://open?path=%path&line=%line',
                 ],
                 'netbeans' => [
                     'label' => 'NetBeans',

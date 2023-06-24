@@ -1,3 +1,37 @@
+5.1.12
+
+- improved Timeline event run method to stop the event in case of an exception (implemented by UlrichEckhardt, thanks!)
+- fixed some deprecation warnings on PHP 8.2 (implemented by faytekin, thanks!)
+- fixed some deprecation warnings on PHP 8.1 (implemented by villermen, thanks!)
+
+5.1.11
+
+- fixed crash when resolving authenticated user in Laravel without using Eloquent (reported by m-thalmann-athesia, thanks!)
+
+5.1.10
+
+- fixed crash when resolving authenticated user in Laravel (reported by LucaRed, thanks!)
+
+5.1.9
+
+- added support for Eloquent strict mode (reported by Sergiobop, thanks!)
+
+5.1.8
+
+- updated list of built-in Laravel commands to ignore when collecting commands and included Horizon commands
+- fixed collecting of Laravel queue jobs when used with Horizon
+- fixed collecting of authanticated user name when the User model includes name() method (implemented by devfrey, thanks!)
+
+5.1.7
+
+- added support for authentiaction in the Vanilla integration
+- added support for compressed Xdebug profiles
+- improved collecting of Laravel Artisan commands to support abbreviated commands (implemented by mike-peters90, thanks!)
+- fixed doubled backslashes in collected Laravel database query bindings (reported by pys1992, thanks!)
+- fixed compatibility with PostgreSQL in SQL storage (implemented by screw, thanks!)
+- fixed possible crash during file storage cleanup when used with Laravel Octane (reported by flexchar, thanks!)
+- fixed infinite loop when collecting queries in Doctrine 3.x (reported by N-M, thanks!)
+
 5.1.6
 
 - added Monolog 2.x compatible handler (idea by mahagr, thanks!)

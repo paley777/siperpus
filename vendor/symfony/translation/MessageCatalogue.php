@@ -36,17 +36,11 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         $this->messages = $messages;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getLocale(): string
     {
         return $this->locale;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDomains(): array
     {
         $domains = [];
@@ -61,9 +55,6 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         return array_values($domains);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function all(string $domain = null): array
     {
         if (null !== $domain) {
@@ -90,16 +81,13 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function set(string $id, string $translation, string $domain = 'messages')
     {
         $this->add([$id => $translation], $domain);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function has(string $id, string $domain = 'messages'): bool
     {
         if (isset($this->messages[$domain][$id]) || isset($this->messages[$domain.self::INTL_DOMAIN_SUFFIX][$id])) {
@@ -113,17 +101,11 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         return false;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function defines(string $id, string $domain = 'messages'): bool
     {
         return isset($this->messages[$domain][$id]) || isset($this->messages[$domain.self::INTL_DOMAIN_SUFFIX][$id]);
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function get(string $id, string $domain = 'messages'): string
     {
         if (isset($this->messages[$domain.self::INTL_DOMAIN_SUFFIX][$id])) {
@@ -142,7 +124,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function replace(array $messages, string $domain = 'messages')
     {
@@ -152,28 +134,23 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function add(array $messages, string $domain = 'messages')
     {
-        if (!isset($this->messages[$domain])) {
-            $this->messages[$domain] = [];
-        }
-        $intlDomain = $domain;
-        if (!str_ends_with($domain, self::INTL_DOMAIN_SUFFIX)) {
-            $intlDomain .= self::INTL_DOMAIN_SUFFIX;
-        }
+        $altDomain = str_ends_with($domain, self::INTL_DOMAIN_SUFFIX) ? substr($domain, 0, -\strlen(self::INTL_DOMAIN_SUFFIX)) : $domain.self::INTL_DOMAIN_SUFFIX;
         foreach ($messages as $id => $message) {
-            if (isset($this->messages[$intlDomain]) && \array_key_exists($id, $this->messages[$intlDomain])) {
-                $this->messages[$intlDomain][$id] = $message;
-            } else {
-                $this->messages[$domain][$id] = $message;
-            }
+            unset($this->messages[$altDomain][$id]);
+            $this->messages[$domain][$id] = $message;
+        }
+
+        if ([] === ($this->messages[$altDomain] ?? null)) {
+            unset($this->messages[$altDomain]);
         }
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function addCatalogue(MessageCatalogueInterface $catalogue)
     {
@@ -205,7 +182,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function addFallbackCatalogue(MessageCatalogueInterface $catalogue)
     {
@@ -236,33 +213,24 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFallbackCatalogue(): ?MessageCatalogueInterface
     {
         return $this->fallbackCatalogue;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getResources(): array
     {
         return array_values($this->resources);
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function addResource(ResourceInterface $resource)
     {
         $this->resources[$resource->__toString()] = $resource;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getMetadata(string $key = '', string $domain = 'messages'): mixed
     {
         if ('' == $domain) {
@@ -283,7 +251,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function setMetadata(string $key, mixed $value, string $domain = 'messages')
     {
@@ -291,7 +259,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function deleteMetadata(string $key = '', string $domain = 'messages')
     {
@@ -304,9 +272,6 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCatalogueMetadata(string $key = '', string $domain = 'messages'): mixed
     {
         if (!$domain) {
@@ -327,7 +292,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function setCatalogueMetadata(string $key, mixed $value, string $domain = 'messages')
     {
@@ -335,7 +300,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function deleteCatalogueMetadata(string $key = '', string $domain = 'messages')
     {
@@ -353,7 +318,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
      *
      * @param array $values Values to add
      */
-    private function addMetadata(array $values)
+    private function addMetadata(array $values): void
     {
         foreach ($values as $domain => $keys) {
             foreach ($keys as $key => $value) {
@@ -362,7 +327,7 @@ class MessageCatalogue implements MessageCatalogueInterface, MetadataAwareInterf
         }
     }
 
-    private function addCatalogueMetadata(array $values)
+    private function addCatalogueMetadata(array $values): void
     {
         foreach ($values as $domain => $keys) {
             foreach ($keys as $key => $value) {

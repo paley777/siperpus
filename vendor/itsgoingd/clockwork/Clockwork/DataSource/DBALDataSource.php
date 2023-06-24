@@ -20,10 +20,14 @@ class DBALDataSource extends DataSource implements SQLLogger
 	// DBAL connection
 	protected $connection;
 
+	// DBAL connection name
+	protected $connectionName;
+
 	// Create a new data source instance, takes a DBAL connection instance as an argument
 	public function __construct(Connection $connection)
 	{
 		$this->connection = $connection;
+		$this->connectionName = $this->connection->getDatabase();
 
 		$configuration = $this->connection->getConfiguration();
 		$currentLogger = $configuration->getSQLLogger();
@@ -79,7 +83,7 @@ class DBALDataSource extends DataSource implements SQLLogger
 			'query'      => $this->createRunnableQuery($query['query'], $query['params'], $query['types']),
 			'bindings'   => $query['params'],
 			'duration'   => (microtime(true) - $query['time']) * 1000,
-			'connection' => $this->connection->getDatabase(),
+			'connection' => $this->connectionName,
 			'time'       => $query['time']
 		];
 
@@ -164,7 +168,7 @@ class DBALDataSource extends DataSource implements SQLLogger
 				return '(' . $param . ')';
 			}
 		} else {
-			$param = htmlspecialchars($param); // Originally used the e() Laravel helper
+			$param = htmlspecialchars((string) $param); // Originally used the e() Laravel helper
 		}
 		return '"' . (string) $param . '"';
 	}

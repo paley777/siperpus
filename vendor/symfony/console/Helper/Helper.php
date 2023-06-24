@@ -21,19 +21,19 @@ use Symfony\Component\String\UnicodeString;
  */
 abstract class Helper implements HelperInterface
 {
-    protected $helperSet = null;
+    protected $helperSet;
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     public function setHelperSet(HelperSet $helperSet = null)
     {
+        if (1 > \func_num_args()) {
+            trigger_deprecation('symfony/console', '6.2', 'Calling "%s()" without any arguments is deprecated, pass null explicitly instead.', __METHOD__);
+        }
         $this->helperSet = $helperSet;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getHelperSet(): ?HelperSet
     {
         return $this->helperSet;
@@ -91,6 +91,9 @@ abstract class Helper implements HelperInterface
         return mb_substr($string, $from, $length, $encoding);
     }
 
+    /**
+     * @return string
+     */
     public static function formatTime(int|float $secs)
     {
         static $timeFormats = [
@@ -120,6 +123,9 @@ abstract class Helper implements HelperInterface
         }
     }
 
+    /**
+     * @return string
+     */
     public static function formatMemory(int $memory)
     {
         if ($memory >= 1024 * 1024 * 1024) {
@@ -137,6 +143,9 @@ abstract class Helper implements HelperInterface
         return sprintf('%d B', $memory);
     }
 
+    /**
+     * @return string
+     */
     public static function removeDecoration(OutputFormatterInterface $formatter, ?string $string)
     {
         $isDecorated = $formatter->isDecorated();
@@ -145,6 +154,8 @@ abstract class Helper implements HelperInterface
         $string = $formatter->format($string ?? '');
         // remove already formatted characters
         $string = preg_replace("/\033\[[^m]*m/", '', $string ?? '');
+        // remove terminal hyperlinks
+        $string = preg_replace('/\\033]8;[^;]*;[^\\033]*\\033\\\\/', '', $string ?? '');
         $formatter->setDecorated($isDecorated);
 
         return $string;

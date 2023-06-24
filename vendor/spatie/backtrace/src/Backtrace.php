@@ -45,9 +45,9 @@ class Backtrace
         return $this;
     }
 
-    public function withArguments(): self
+    public function withArguments(bool $withArguments = true): self
     {
-        $this->withArguments = true;
+        $this->withArguments = $withArguments;
 
         return $this;
     }
@@ -61,7 +61,7 @@ class Backtrace
 
     public function applicationPath(string $applicationPath): self
     {
-        $this->applicationPath = $applicationPath;
+        $this->applicationPath = rtrim($applicationPath, '/');
 
         return $this;
     }

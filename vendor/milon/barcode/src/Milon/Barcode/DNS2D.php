@@ -215,9 +215,9 @@ class DNS2D {
                 if ($this->barcode_array['bcode'][$r][$c] == 1) {
                     // draw a single barcode cell
                     if ($imagick) {
-                        $bar->rectangle($x, $y, ($x + $w), ($y + $h));
+                        $bar->rectangle($x, $y, ($x + ($w-1)), ($y + ($h-1)));
                     } else {
-                        imagefilledrectangle($png, $x, $y, ($x + $w), ($y + $h), $fgcol);
+                        imagefilledrectangle($png, $x, $y, ($x + ($w-1)), ($y + ($h-1)), $fgcol);
                     }
                 }
                 $x += $w;
@@ -405,7 +405,7 @@ class DNS2D {
         return $path;
     }
 
-    protected function setStorPath($path) {
+    public function setStorPath($path) {
         $this->store_path = rtrim($path, '/' . DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
         return $this;
     }

@@ -143,7 +143,6 @@
                                     <p class="mb-0">Foto Profil</p>
                                 </div>
                                 <div class="col-sm-9">
-
                                     <input class="form-control" accept=".jpg,.gif,.png" type="file" id="image"
                                         name="nama_gambar" onchange="previewImage()">
                                 </div>

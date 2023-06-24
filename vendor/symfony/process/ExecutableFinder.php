@@ -23,6 +23,8 @@ class ExecutableFinder
 
     /**
      * Replaces default suffixes of executable.
+     *
+     * @return void
      */
     public function setSuffixes(array $suffixes)
     {
@@ -31,6 +33,8 @@ class ExecutableFinder
 
     /**
      * Adds new possible suffix to check for executable.
+     *
+     * @return void
      */
     public function addSuffix(string $suffix)
     {
@@ -46,8 +50,8 @@ class ExecutableFinder
      */
     public function find(string $name, string $default = null, array $extraDirs = []): ?string
     {
-        if (ini_get('open_basedir')) {
-            $searchPath = array_merge(explode(\PATH_SEPARATOR, ini_get('open_basedir')), $extraDirs);
+        if (\ini_get('open_basedir')) {
+            $searchPath = array_merge(explode(\PATH_SEPARATOR, \ini_get('open_basedir')), $extraDirs);
             $dirs = [];
             foreach ($searchPath as $path) {
                 // Silencing against https://bugs.php.net/69240

@@ -26,7 +26,7 @@ use Symfony\Component\Translation\MessageCatalogueInterface;
 class TargetOperation extends AbstractOperation
 {
     /**
-     * {@inheritdoc}
+     * @return void
      */
     protected function processDomain(string $domain)
     {

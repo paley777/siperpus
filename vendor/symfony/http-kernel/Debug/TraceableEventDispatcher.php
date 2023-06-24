@@ -24,7 +24,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class TraceableEventDispatcher extends BaseTraceableEventDispatcher
 {
     /**
-     * {@inheritdoc}
+     * @return void
      */
     protected function beforeDispatch(string $eventName, object $event)
     {
@@ -59,7 +59,7 @@ class TraceableEventDispatcher extends BaseTraceableEventDispatcher
     }
 
     /**
-     * {@inheritdoc}
+     * @return void
      */
     protected function afterDispatch(string $eventName, object $event)
     {

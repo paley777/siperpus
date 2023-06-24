@@ -36,15 +36,11 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
         $files = iterator_to_array(new \RecursiveIteratorIterator(
             new \RecursiveCallbackFilterIterator(
                 new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS | \FilesystemIterator::FOLLOW_SYMLINKS),
-                function (\SplFileInfo $current) {
-                    return !str_starts_with($current->getBasename(), '.');
-                }
+                fn (\SplFileInfo $current) => !str_starts_with($current->getBasename(), '.')
             ),
             \RecursiveIteratorIterator::LEAVES_ONLY
         ));
-        usort($files, function (\SplFileInfo $a, \SplFileInfo $b) {
-            return (string) $a > (string) $b ? 1 : -1;
-        });
+        usort($files, fn (\SplFileInfo $a, \SplFileInfo $b) => (string) $a > (string) $b ? 1 : -1);
 
         foreach ($files as $file) {
             if (!$file->isFile() || !str_ends_with($file->getFilename(), '.php')) {
@@ -64,16 +60,17 @@ class AnnotationDirectoryLoader extends AnnotationFileLoader
         return $collection;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function supports(mixed $resource, string $type = null): bool
     {
+        if (!\is_string($resource)) {
+            return false;
+        }
+
         if (\in_array($type, ['annotation', 'attribute'], true)) {
             return true;
         }
 
-        if ($type || !\is_string($resource)) {
+        if ($type) {
             return false;
         }
 

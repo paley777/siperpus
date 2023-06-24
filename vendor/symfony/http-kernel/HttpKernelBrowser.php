@@ -47,6 +47,8 @@ class HttpKernelBrowser extends AbstractBrowser
 
     /**
      * Sets whether to catch exceptions when the kernel is handling a request.
+     *
+     * @return void
      */
     public function catchExceptions(bool $catchExceptions)
     {
@@ -54,8 +56,6 @@ class HttpKernelBrowser extends AbstractBrowser
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @param Request $request
      *
      * @return Response
@@ -72,8 +72,6 @@ class HttpKernelBrowser extends AbstractBrowser
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @param Request $request
      *
      * @return string
@@ -114,6 +112,9 @@ EOF;
         return $code.$this->getHandleScript();
     }
 
+    /**
+     * @return string
+     */
     protected function getHandleScript()
     {
         return <<<'EOF'
@@ -127,9 +128,6 @@ echo serialize($response);
 EOF;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     protected function filterRequest(DomRequest $request): Request
     {
         $httpRequest = Request::create($request->getUri(), $request->getMethod(), $request->getParameters(), $request->getCookies(), $request->getFiles(), $server = $request->getServer(), $request->getContent());
@@ -186,8 +184,6 @@ EOF;
     }
 
     /**
-     * {@inheritdoc}
-     *
      * @param Response $response
      */
     protected function filterResponse(object $response): DomResponse

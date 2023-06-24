@@ -42,12 +42,14 @@ class ServerDumper implements DataDumperInterface
     }
 
     /**
-     * {@inheritdoc}
+     * @return string|null
      */
     public function dump(Data $data)
     {
         if (!$this->connection->write($data) && $this->wrappedDumper) {
-            $this->wrappedDumper->dump($data);
+            return $this->wrappedDumper->dump($data);
         }
+
+        return null;
     }
 }

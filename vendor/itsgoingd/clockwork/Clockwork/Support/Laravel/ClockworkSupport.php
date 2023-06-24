@@ -30,6 +30,9 @@ class ClockworkSupport
 	// Laravel application instance
 	protected $app;
 
+	// Laravel artisan (console application) instance
+	protected $artisan;
+
 	// Incoming request instance
 	protected $incomingRequest;
 
@@ -204,6 +207,15 @@ class ClockworkSupport
 		return $this->app['clockwork.laravel'];
 	}
 
+	public function handleArtisanEvents()
+	{
+		if (class_exists(\Illuminate\Console\Events\ArtisanStarting::class)) {
+			$this->app['events']->listen(\Illuminate\Console\Events\ArtisanStarting::class, function ($event) {
+				$this->artisan = $event->artisan;
+			});
+		}
+	}
+
 	public function handleOctaneEvents()
 	{
 		$this->app['events']->listen(\Laravel\Octane\Events\RequestReceived::class, function ($event) {
@@ -281,7 +293,7 @@ class ClockworkSupport
 
 			if (! $event->command || $this->isCommandFiltered($event->command)) return;
 
-			$command = $this->app->make(ConsoleKernel::class)->all()[$event->command];
+			$command = $this->artisan->find($event->command);
 
 			$allArguments = $event->input->getArguments();
 			$allOptions = $event->input->getOptions();
@@ -673,31 +685,40 @@ class ClockworkSupport
 	protected function builtinLaravelCommands()
 	{
 		return [
-			'clear-compiled', 'down', 'dump-server', 'env', 'help', 'list', 'migrate', 'optimize', 'preset', 'serve',
-			'tinker', 'up',
+			'clear-compiled', 'completion', 'db', 'down', 'dump-server', 'env', 'help', 'list', 'migrate', 'optimize',
+			'preset', 'serve', 'test', 'tinker', 'up',
 			'app:name',
 			'auth:clear-resets',
 			'cache:clear', 'cache:forget', 'cache:table',
 			'config:cache', 'config:clear',
-			'db:seed',
+			'db:seed', 'db:wipe',
 			'event:cache', 'event:clear', 'event:generate', 'event:list',
+			'horizon', 'horizon:clear', 'horizon:continue', 'horizon:continue-supervisor', 'horizon:forget',
+			'horizon:install', 'horizon:list', 'horizon:pause', 'horizon:pause-supervisor', 'horizon:publish',
+			'horizon:purge', 'horizon:snapshot', 'horizon:status', 'horizon:supervisors', 'horizon:terminate',
+			'horizon:work',
 			'key:generate',
-			'make:auth', 'make:channel', 'make:command', 'make:controller', 'make:event', 'make:exception',
-			'make:factory', 'make:job', 'make:listener', 'make:mail', 'make:middleware', 'make:migration', 'make:model',
-			'make:notification', 'make:observer', 'make:policy', 'make:provider', 'make:request', 'make:resource',
-			'make:rule', 'make:seeder', 'make:test',
+			'make:auth', 'make:cast', 'make:channel', 'make:command', 'make:component', 'make:controller', 'make:event',
+			'make:exception', 'make:factory', 'make:job', 'make:listener', 'make:mail', 'make:middleware',
+			'make:migration', 'make:model', 'make:notification', 'make:observer', 'make:policy', 'make:provider',
+			'make:request', 'make:resource', 'make:rule', 'make:scope', 'make:seeder', 'make:test',
 			'migrate:fresh', 'migrate:install', 'migrate:refresh', 'migrate:reset', 'migrate:rollback',
 			'migrate:status',
+			'model:prune',
 			'notifications:table',
 			'octane:install', 'octane:reload', 'octane:start', 'octane:status', 'octane:stop',
 			'optimize:clear',
 			'package:discover',
-			'queue:failed', 'queue:failed-table', 'queue:flush', 'queue:forget', 'queue:listen', 'queue:restart',
-			'queue:retry', 'queue:table', 'queue:work',
+			'queue:batches-table', 'queue:clear', 'queue:failed', 'queue:failed-table', 'queue:flush', 'queue:forget',
+			'queue:listen', 'queue:monitor', 'queue:prune-batches', 'queue:prune-failed', 'queue:restart',
+			'queue:retry', 'queue:retry-batch', 'queue:table', 'queue:work',
 			'route:cache', 'route:clear', 'route:list',
-			'schedule:run',
+			'sail:install', 'sail:publish',
+			'schedule:clear-cache', 'schedule:list', 'schedule:run', 'schedule:test', 'schedule:work',
+			'schema:dump',
 			'session:table',
 			'storage:link',
+			'stub:publish',
 			'vendor:publish',
 			'view:cache', 'view:clear'
 		];
