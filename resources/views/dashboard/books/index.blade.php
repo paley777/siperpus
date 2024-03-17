@@ -31,7 +31,7 @@
                             <button class="btn btn-primary" type="submit"><i class="bi bi-search"></i></button>
                         </div>
                     </form>
-                    <form method="post" action="/dashboard/books/import" enctype="multipart/form-data">
+                    {{-- <form method="post" action="/dashboard/books/import" enctype="multipart/form-data">
                         <div>
                             <p>Input Data Buku dari file spreadsheet (.xlsx, .xls, .csv)</p>
                         </div>
@@ -41,8 +41,8 @@
                             <button type="submit " class="btn btn-primary">Import</button>
                         </div>
 
-                    </form>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    </form> --}}
+                    {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         Lihat Contoh Format Excel
                     </button>
                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
@@ -63,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
             <a href="/dashboard/books/create" class="btn btn-lg btn-primary">Tambah Buku</a>
@@ -76,7 +76,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Kategori Rak</th>
                             <th scope="col">Judul Buku</th>
-                            <th scope="col">Barcode</th>
+                            {{-- <th scope="col">Barcode</th> --}}
                             <th scope="col">Pengarang</th>
                             <th scope="col">Penerbit</th>
                             <th scope="col">Tahun Terbit</th>
@@ -90,7 +90,7 @@
                                 <td>{{ $books->firstItem() + $key }}</td>
                                 <td>{{ $book->rak->kategori ?? 'None' }}</td>
                                 <td>{{ $book->judul }}</td>
-                                <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
+                                {{-- <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td> --}}
                                 <td>{{ $book->pengarang }}</td>
                                 <td>{{ $book->penerbit }}</td>
                                 <td>{{ $book->thn_terbit }}</td>
@@ -101,9 +101,9 @@
                                     <form action="/dashboard/books/print" method="post" class="d-inline" target="_blank">
                                         @csrf
                                         <input type='hidden' name='id' value='{{ $book->id }}'>
-                                        <button class="badge bg-primary border-0"
+                                        {{-- <button class="badge bg-primary border-0"
                                             onclick="return confirm('Cetak Kartu?')">Cetak
-                                            Barcode</button>
+                                            Barcode</button> --}}
                                     </form>
 
                                     <form action="/dashboard/books/{{ $book->id }}" method="post" class="d-inline">

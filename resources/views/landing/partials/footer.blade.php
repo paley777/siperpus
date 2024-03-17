@@ -35,9 +35,8 @@
         <div class="row gy-4 gx-5">
             <div class="col-lg-8 col-md-6">
                 <h5 class="h1 text-white">SIPerpus</h5>
-                <p class="small text-white">Sistem Informasi Perpustakaan SMP Negeri 1 Kota Bengkulu.</p>
-                <p class="small text-white">Jl. Jendral. Sudirman, Tengah Padang, Kec. Teluk Segara, Kota Bengkulu,
-                    Bengkulu 38114</p>
+                <p class="small text-white">Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu.</p>
+                <p class="small text-white">Jl. Wr. Supratman, Kandang Limun, Kec. Muara Bangkahulu, Kota Bengkulu, Bengkulu 38123</p>
                 <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white"
                         href="/">SIPerpus</a></p>
             </div>
@@ -62,11 +61,11 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-white mb-3">Media Sosial</h5>
                 <p class="small text-white">Klik tombol media sosial di bawah untuk terhubung dengan kami.</p>
-                <a href="https://www.instagram.com/smpnegeri.1__/"><i class="bi bi-instagram px-3"
+                {{-- <a href="https://www.instagram.com/smpnegeri.1__/"><i class="bi bi-instagram px-3"
+                        style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a> --}}
+                <a href="https://dapo.kemdikbud.go.id/sekolah/81D579D97F2B9C3E5807"><i class="bi bi-globe"
                         style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
-                <a href="https://smpn1kotabengkulu.sch.id/"><i class="bi bi-globe"
-                        style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
-                <a href="mailto:rsbismpngr1bkl@yahoo.com"><i class="bi bi-envelope px-3"
+                <a href="mailto:sdnegeri69bkl@gmail.com"><i class="bi bi-envelope px-3"
                         style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
             </div>
         </div>

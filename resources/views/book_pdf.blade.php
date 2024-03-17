@@ -15,8 +15,8 @@
         }
     </style>
     <center>
-        <h5>Laporan Buku SMP Negeri 1 Kota Bengkulu</h4>
-            <h6>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu, Bengkulu 38114
+        <h5>Laporan Buku SD Negeri 69 Kota Bengkulu</h4>
+            <h6>Jl. Wr. Supratman, Kandang Limun, Kec. Muara Bangkahulu, Kota Bengkulu, Bengkulu 38123
         </h5>
     </center>
     <table class='table table-bordered'>

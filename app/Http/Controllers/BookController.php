@@ -53,7 +53,7 @@ class BookController extends Controller
         $validatedData = $request->validate([
             'rak_id' => 'required',
             'judul' => 'required|unique:books',
-            'no_barcode' => 'required|unique:books',
+            'no_barcode' => 'required',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
@@ -111,7 +111,7 @@ class BookController extends Controller
             $rules['judul'] = 'required|unique:books';
         }
         if ($request->no_barcode != $book->no_barcode) {
-            $rules['no_barcode'] = 'required|unique:books';
+            $rules['no_barcode'] = 'required';
         }
 
         $validatedData = $request->validate($rules);

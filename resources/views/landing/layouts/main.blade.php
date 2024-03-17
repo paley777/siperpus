@@ -15,9 +15,9 @@
         rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i"
         rel="stylesheet" />
-    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ asset('storage/images/logo1.png') }}" />
     <link rel="stylesheet" href="/css/styles.css">
-    <title>SIPerpus | SMP Negeri 1 Kota Bengkulu</title>
+    <title>SIPerpus | SD Negeri 69 Kota Bengkulu</title>
 </head>
 
 

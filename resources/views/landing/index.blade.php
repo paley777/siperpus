@@ -233,7 +233,7 @@
     </style>
     <style>
         .masthead {
-            background-image: url("{{ asset('storage/images/1.jpg') }}") !important;
+            background-image: url("{{ asset('storage/images/back.jpg') }}") !important;
         }
     </style>
     <div class="loadding-page">
@@ -248,7 +248,7 @@
         <div class="masthead-content">
             <div class="container px-5">
                 <h1 class="masthead-heading mb-0">SIPerpus</h1>
-                <h2 class="masthead-subheading mb-0">Sistem Informasi Perpustakaan SMP Negeri 1 Kota Bengkulu</h2>
+                <h2 class="masthead-subheading mb-0">Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu</h2>
                 <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Klik di Sini</a>
             </div>
         </div>
@@ -257,13 +257,13 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/1.jpg') }}" />
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/back2.jpg') }}" />
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1">
                     <div class="p-5">
                         <h2 class="display-4">Open Public Access Catalog</h2>
-                        <p>OPAC adalah katalog terbuka yang dapat diakses secara publik oleh siswa SMP Negeri 1 Kota
+                        <p>OPAC adalah katalog terbuka yang dapat diakses secara publik oleh siswa SD Negeri 69 Kota
                             Bengkulu. OPAC memuat beragam katalog buku yang terdapat di perpustakaan. Klik di bawah ini
                             untuk mempelajari lebih lanjut.</p>
                         <a class="btn btn-primary" href="/opac" role="button">OPAC</a>
@@ -277,13 +277,13 @@
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6">
                     <div class="p-5"><img class="img-fluid rounded-circle"
-                            src="{{ asset('storage/images/logo.png') }}" />
+                            src="{{ asset('storage/images/logo1.png') }}" />
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="p-5">
                         <h2 class="display-4">Tentang Kami</h2>
-                        <p>Klik di bawah ini untuk menuju laman Tentang Perpustakaan SMP Negeri 1 Kota Bengkulu.</p>
+                        <p>Klik di bawah ini untuk menuju laman Tentang Perpustakaan SD Negeri 69 Kota Bengkulu.</p>
                         <a class="btn btn-primary" href="/about" role="button">Tentang Kami</a>
                     </div>
                 </div>
@@ -294,7 +294,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/2.jpg') }}"
+                    <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/back3.jpg') }}"
                             alt="..." />
                     </div>
                 </div>

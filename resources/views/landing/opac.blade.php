@@ -24,7 +24,7 @@
                         </div>
                     </form>
 
-                    <a class="btn btn-warning" href="/opac/barcode"><i class="bi bi-search"> Scan Barcode</i></a>
+                    {{-- <a class="btn btn-warning" href="/opac/barcode"><i class="bi bi-search"> Scan Barcode</i></a> --}}
 
                 </div>
                 </p>
@@ -33,7 +33,7 @@
     </section>
     <div class="album py-5 bg-light">
         <div class="container">
-            <h1 class="fw-light text-center">Buku Paket Kelas VII, VIII, IX</h1>
+            {{-- <h1 class="fw-light text-center">Buku Paket Kelas VII, VIII, IX</h1>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
@@ -90,7 +90,7 @@
                     </div>
                 </div>
 
-            </div>
+            </div> --}}
             <h1 class="fw-light text-center mt-5">Daftar Buku</h1>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <table class="table table-bordered border-primary">
@@ -99,7 +99,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Kategori Rak</th>
                             <th scope="col">Judul Buku</th>
-                            <th scope="col">Barcode</th>
+                            {{-- <th scope="col">Barcode</th> --}}
                             <th scope="col">Pengarang</th>
                             <th scope="col">Penerbit</th>
                             <th scope="col">Tahun Terbit</th>
@@ -113,7 +113,7 @@
                                 <td>{{ $books->firstItem() + $key }}</td>
                                 <td>{{ $book->rak->kategori ?? 'None' }}</td>
                                 <td>{{ $book->judul }}</td>
-                                <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td>
+                                {{-- <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td> --}}
                                 <td>{{ $book->pengarang }}</td>
                                 <td>{{ $book->penerbit }}</td>
                                 <td>{{ $book->thn_terbit }}</td>

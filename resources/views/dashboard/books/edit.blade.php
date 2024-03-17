@@ -48,16 +48,16 @@
                             </div>
                             <hr>
                             <div class="row">
-                                <div class="col-sm-3">
+                                {{-- <div class="col-sm-3">
                                     <p class="mb-0">Nomor Barcode</p>
-                                </div>
+                                </div> --}}
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="no_barcode" required
                                         value="{{ old('no_barcode', $book->no_barcode) }}" id="intTextBox1"
-                                        maxlength="13">
+                                        maxlength="13" hidden>
                                 </div>
                             </div>
-                            <hr>
+                            {{-- <hr> --}}
                             <div class="row">
                                 <div class="col-sm-3">
                                     <p class="mb-0">Pengarang</p>

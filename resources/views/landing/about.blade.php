@@ -12,7 +12,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 mt-4 pt-2">
                                 <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                    <img src="{{ asset('storage/images/1.jpg') }}" class="img-fluid" alt="Image"
+                                    <img src="{{ asset('storage/images/back.jpg') }}" class="img-fluid" alt="Image"
                                         style="width: 100%; height:362px; object-fit: cover;" />
                                     <div class="img-overlay bg-dark"></div>
                                 </div>
@@ -26,7 +26,7 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
                                 <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                    <img src="{{ asset('storage/images/2.jpg') }}" class="img-fluid" alt="Image"
+                                    <img src="{{ asset('storage/images/back2.jpg') }}" class="img-fluid" alt="Image"
                                         style="width: 100%; height:350px; object-fit: cover;" />
                                     <div class="img-overlay bg-dark"></div>
                                 </div>
@@ -35,7 +35,7 @@
 
                             <div class="col-lg-12 col-md-12 mt-4 pt-2">
                                 <div class="card work-desk rounded border-0 shadow-lg overflow-hidden">
-                                    <img src="{{ asset('storage/images/3.jpg') }}" class="img-fluid" alt="Image"
+                                    <img src="{{ asset('storage/images/back3.jpg') }}" class="img-fluid" alt="Image"
                                         style="width: 350px; height:300px; object-fit: cover;" />
                                     <div class="img-overlay bg-dark"></div>
                                 </div>
@@ -55,9 +55,9 @@
                     <h5 class="text-custom font-weight-normal mb-3">Tentang Kami</h5>
                     <h4 class="title mb-4">
                         SIPerpus <br />
-                        Sistem Informasi Perpustakaan SMP Negeri 1 Kota Bengkulu
+                        Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu
                     </h4>
-                    <p class="text-muted mb-3">SIPerpus adalah situs perpustakaan SMP Negeri 1 Kota Bengkulu. SIPerpus
+                    <p class="text-muted mb-3">SIPerpus adalah situs perpustakaan SD Negeri 69 Kota Bengkulu. SIPerpus
                         memiliki fitur OPAC (Open Public Access Catalog), Helper (Bantuan), fitur pinjam-kembali buku yang
                         sangat memudahkan siswa dalam mengakses perpustakaan.</p>
 
@@ -77,43 +77,29 @@
                 <div class="lc-block mb-3">
                     <div editable="rich">
                         <h4 class="title">Visi</h4>
-                        <p>Unggul dalam prestasi berdasarkan imtaq, berkarakter, cerdas, tanggap, cakap, berbudaya
-                            lingkungan,
-                            dan terampil mengimplementasikan diri pada era globalisasi
+                        <p>Mewujudkan warga sekolah yang berkarakter cerdas,terampil dan berwawasan global
                         </p>
                         <h4 class="title">Misi</h4>
-                        <p>1. Menerapkan manajemen bertaraf internasional yang unggul.</p>
-                        <p>2. Meningkatkan standar ketuntasan belajar, prestasi belajar, dan internasional.</p>
-                        <p>3. Menerapkan pembelajaran yang aktif, efektif, dan menyenangkan dengan pendekatan Saintifik
-                            untuk melaksanakan Kurikulum 2013.</p>
-                        <p>4. Mengembangkan inovasi pendidikan.</p>
-                        <p>5. Mewujudkan pendidikan yang bermutu, efisien, dan relevan serta berdaya saing tinggi baik di
-                            tingkat nasional maupun internasional.</p>
-                        <p>6. Mewujudkan pendidikan dengan kelulusan yang cerdas, terampil, beriman, bertaqwa serta memiliki
-                            keunggulan kompetitif di era globalisasi.</p>
-                        <p>7. Mewujudkan sistem pendidikan yang transparan, akuntabel, artisipatif, dan efektif.</p>
-                        <p>8. Mewujudkan pencapaian kompetensi siswa yang mampu bersaing dalam era globalisasi.</p>
-                        <p>9. Mengembangkan sikap taat, disiplin, tertib, tangguh, terampil dan cakap.</p>
-                        <p>10.Mengembangan persepsi apresiasi dan kreasi seni serta keolahragaan.</p>
-                        <p>11.Mengoptimalkan kegiatan ektrakurikuler di bidang keagamaan.</p>
-                        <p>12.Meningkatkan budaya gemar menulis, membacca, dan mengadakan penelitian yang berskala
-                            internasional.</p>
-                        <p>13.Menata lingkungan dan ruang belajar.</p>
-                        <p>14.Melaksanakan kurikulum muatan lokal yang berwawasan global.</p>
-                        <p>15.Melaksanakan dan mengembangan inovasi pembelajaran.</p>
-                        <p>16.Melaksanakan dan mengembangkan berdasarkan BSNP.</p>
+                        <p>1. melaksanakan penguatan pendidikan karakter.</p>
+                        <p>2.mewujudkan nilai nilai karakter sebgai budaya sekolah.</p>
+                        <p>3. membudayakan literasi dan numersi dikalangan peserta didik
+                            .</p>
+                        <p>4. melaksanakan pembelajaran yang interaktif dan menjenangkan bagi peerta didik.</p>
+                        <p>5.mengembsngkan kompetensi pendidikan dan tenaga kepedidikan
+                            .</p>
+                        <p>6. mengembangkan bakat dan minat peserta didik terhadap seni dan budaya serta berwawasan global.</p>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-                <div class="lc-block"><img class="rounded-start" src="{{ asset('storage/images/2.jpg') }}"
+                <div class="lc-block"><img class="rounded-start" src="{{ asset('storage/images/back.jpg') }}"
                         style="width: 100%; height:500px; object-fit: cover;"></div>
             </div>
         </div>
         <div class="row pb-0  align-items-center rounded-3 border shadow-lg mb-5" id="struktur">
             <div class="col-lg-4  p-0 overflow-hidden shadow-lg">
-                <div class="lc-block"><img class="rounded-start" src="{{ asset('storage/images/1.jpg') }}"
+                <div class="lc-block"><img class="rounded-start" src="{{ asset('storage/images/back2.jpg') }}"
                         style="width: 100%; height:500px; object-fit: cover;"></div>
             </div>
             <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
@@ -125,16 +111,20 @@
                 </div>
                 <div class="lc-block mb-3">
                     <div editable="rich">
+                        <h4 class="title">Pengawas Sekolah</h4>
+                        <p class="lead">HON YASMILI, S.Ag.M.Pd</p>
+                        <h4 class="title">Ketua komite</h4>
+                        <p class="lead">SULIANTO,S.Pd</p>
                         <h4 class="title">Kepala Sekolah</h4>
-                        <p class="lead">Idiarman, M.Pd</p>
-                        <h4 class="title">Waka Kesiswaan</h4>
-                        <p class="lead">Juhariah, S.Pd</p>
-                        <h4 class="title">Waka Bid. Kurikulum</h4>
-                        <p class="lead">Asrul Usadi, S.Pd</p>
-                        <h4 class="title">Waka ORTALA</h4>
-                        <p class="lead">Dulhanan, S.Pd</p>
-                        <h4 class="title">Waka BID. SAPRASHUMAS</h4>
-                        <p class="lead">Drs. Suherman</p>
+                        <p class="lead">HENY HARTY, S.Pd</p>
+                        <h4 class="title">OPERATOR</h4>
+                        <p class="lead">MAYA BAYASARI, S.kom</p>
+                        <h4 class="title">Tata Usaha</h4>
+                        <p class="lead">M.IRFAN SPUTRA</p>
+                        <h4 class="title">Bendahara</h4>
+                        <p class="lead">ElPI YulIANA,S.PD</p>
+                        <h4 class="title">Perpustakaan</h4>
+                        <p class="lead">MUDMA'INA,A.MD</p>
                     </div>
                 </div>
             </div>
@@ -147,7 +137,7 @@
                     <h4 class="title">Lokasi</h4>
 
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.082809753215!2d102.25917141467555!3d-3.7921410972412835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b0240eef160b%3A0x6281df2149bd7ac0!2sSMP%20Negeri%201%20Kota%20Bengkulu!5e0!3m2!1sid!2sid!4v1653157648108!5m2!1sid!2sid"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127399.22184452061!2d102.12567149726564!3d-3.7609909999999953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e36b1bf66d7f9db%3A0xa7c133b51b23f7b7!2sSD%20Negeri%2069%20Kota%20Bengkulu!5e0!3m2!1sid!2sid!4v1709992839195!5m2!1sid!2sid"
                         width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
@@ -155,8 +145,8 @@
             <div class="col">
                 <div class="p-3">
                     <h4 class="title">Kontak Kami</h4>
-                    <p><i class="bi bi-telephone"></i> (0736) 21563 348008 </p>
-                    <p><i class="bi bi-envelope"></i> rsbismpngr1bkl@yahoo.com </p>
+                    <p><i class="bi bi-telephone"></i> (0736)343510</p>
+                    <p><i class="bi bi-envelope"></i> sdnegeri69@gmail.com</p>
                 </div>
             </div>
         </div>

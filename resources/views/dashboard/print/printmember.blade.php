@@ -16,16 +16,14 @@
                         <div class="row">
                             <div class="col-2">
                                 <img class="img" style="height: 70px; width:70px;"
-                                    src="{{ asset('storage/images/logo.png') }}" />
+                                    src="{{ asset('storage/images/logo1.png') }}" />
                             </div>
                             <div class="col-10">
                                 <h6 style="font-size: 12pt; font-weight:bold; line-height: 0.5;">
-                                    <center>SMP NEGERI 1 KOTA BENGKULU</center>
+                                    <center>SD NEGERI 69 KOTA BENGKULU</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
-                                    <center>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu,
-                                        Bengkulu
-                                        38114</center>
+                                    <center>Jl. Wr. Supratman, Kandang Limun, Kec. Muara Bangkahulu, Kota Bengkulu, Bengkulu 38123</center>
                                 </h6>
                                 <h6 style="font-size: 10pt">
                                     <center>KARTU ANGGOTA PERPUSTAKAAN</center>
@@ -98,16 +96,14 @@
                         <div class="row">
                             <div class="col-2">
                                 <img class="img" style="height: 70px; width:70px;"
-                                    src="{{ asset('storage/images/logo.png') }}" />
+                                    src="{{ asset('storage/images/logo1.png') }}" />
                             </div>
                             <div class="col-10">
                                 <h6 style="font-size: 12pt; font-weight:bold; line-height: 0.5;">
                                     <center>SMP NEGERI 1 KOTA BENGKULU</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
-                                    <center>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu,
-                                        Bengkulu
-                                        38114</center>
+                                    <center>Jl. Wr. Supratman, Kandang Limun, Kec. Muara Bangkahulu, Kota Bengkulu, Bengkulu 38123</center>
                                 </h6>
                                 <h6 style="font-size: 10pt">
                                     <center>KARTU ANGGOTA PERPUSTAKAAN</center>
