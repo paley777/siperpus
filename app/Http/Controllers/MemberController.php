@@ -117,7 +117,7 @@ class MemberController extends Controller
         if ($request->no_hp != $member->no_hp) {
             $rules['no_hp'] = 'required|unique:members';
         }
-
+        $validatedData = $request->validate($rules);
         if ($request->file('nama_gambar')) {
             $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
         }
@@ -128,7 +128,7 @@ class MemberController extends Controller
             }
             $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
         }
-        $validatedData = $request->validate($rules);
+
         Member::where('id', $validatedData['id'])->update($validatedData);
 
         return redirect('/dashboard/members')->with('success', 'Anggota telah diubah!.');

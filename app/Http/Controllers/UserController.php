@@ -115,18 +115,18 @@ class UserController extends Controller
             'nama_gambar' => 'image|file|max:50000',
         ];
         $validatedData = $request->validate($rules);
+        $validatedData['password'] = Hash::make($validatedData['password']);
 
         if ($request->file('nama_gambar')) {
             if ($user->nama_gambar) {
                 Storage::delete($user['nama_gambar']);
             }
-
             $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
         }
-        $validatedData['password'] = Hash::make($validatedData['password']);
+
         User::where('id', $validatedData['id'])->update($validatedData);
 
-        return redirect('/dashboard/users')->with('success', 'Profil telah diubah!.');
+        return redirect('/dashboard/users')->with('success', 'Petugas telah diubah!.');
     }
 
     /**
