@@ -43,6 +43,9 @@ pengembangannya menggunakan software MySQL Workbench.
 
 N+1 Problems
 
+## Side Version
+Cek branch "ver2". Branch ini memuat sistem tanpa fitur scan barcode buku dan beberapa penyederhanaan lainnya.
+
 ## Run Locally
 
 Clone the project
