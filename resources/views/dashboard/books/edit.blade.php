@@ -53,8 +53,8 @@
                                 </div> --}}
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="no_barcode" required
-                                        value="{{ old('no_barcode', $book->no_barcode) }}" id="intTextBox1"
-                                        maxlength="13" hidden>
+                                        value="{{ old('no_barcode', $book->no_barcode) }}" id="intTextBox1" maxlength="13"
+                                        hidden>
                                 </div>
                             </div>
                             {{-- <hr> --}}
@@ -65,6 +65,16 @@
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="pengarang"
                                         value="{{ old('pengarang', $book->pengarang) }}" required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Jilid</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="jilid"
+                                        placeholder="Masukkan Jilid..." value="{{ old('jilid', $book->jilid) }}" required>
                                 </div>
                             </div>
                             <hr>
@@ -90,11 +100,55 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">Kota Terbit</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                        value="{{ old('kota_terbit', $book->kota_terbit) }}"
+                                        placeholder="Masukkan Kota Terbit..." name="kota_terbit" required id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Sumber Asal</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                        value="{{ old('sumber_asal', $book->sumber_asal) }}"
+                                        placeholder="Masukkan Sumber Asal..." name="sumber_asal" required id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Klasifikasi</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Masukkan Klasifikasi..."
+                                        value="{{ old('klasifikasi', $book->klasifikasi) }}" name="klasifikasi" required
+                                        id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">Eksemplar</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="eksemplar"
                                         value="{{ old('eksemplar', $book->eksemplar) }}" required id="intTextBox2">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Keterangan</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="keterangan"
+                                        placeholder="Masukkan Keterangan..." required
+                                        value="{{ old('keterangan', $book->keterangan) }}" id="intTextBox2">
                                 </div>
                             </div>
                             <hr>
@@ -158,7 +212,7 @@
             validate: true
         });
     </script>
-     <script>
+    <script>
         $(document).ready(function() {
             $('#kategori').selectize({
                 sortField: 'text'

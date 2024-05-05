@@ -78,9 +78,14 @@
                             <th scope="col">Judul Buku</th>
                             {{-- <th scope="col">Barcode</th> --}}
                             <th scope="col">Pengarang</th>
+                            <th scope="col">Jilid</th>
                             <th scope="col">Penerbit</th>
                             <th scope="col">Tahun Terbit</th>
+                            <th scope="col">Kota Terbit</th>
+                            <th scope="col">Sumber Asal</th>
+                            <th scope="col">Klasifikasi</th>
                             <th scope="col">Eksemplar</th>
+                            <th scope="col">Keterangan</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -92,9 +97,14 @@
                                 <td>{{ $book->judul }}</td>
                                 {{-- <td> {!! DNS1D::getBarcodeSVG($book->no_barcode, 'EAN13', 3, 70) !!}</td> --}}
                                 <td>{{ $book->pengarang }}</td>
+                                <td>{{ $book->jilid }}</td>
                                 <td>{{ $book->penerbit }}</td>
                                 <td>{{ $book->thn_terbit }}</td>
+                                <td>{{ $book->kota_terbit }}</td>
+                                <td>{{ $book->sumber_asal }}</td>
+                                <td>{{ $book->klasifikasi }}</td>
                                 <td>{{ $book->eksemplar }}</td>
+                                <td>{{ $book->keterangan }}</td>
                                 <td>
                                     <a href="/dashboard/books/{{ $book->id }}/edit"
                                         class="badge bg-warning border-0">Edit</a>

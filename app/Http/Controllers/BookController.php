@@ -55,9 +55,14 @@ class BookController extends Controller
             'judul' => 'required|unique:books',
             'no_barcode' => 'required',
             'pengarang' => 'required',
+            'jilid' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
+            'kota_terbit' => 'required',
+            'sumber_asal' => 'required',
+            'klasifikasi' => 'required',
             'eksemplar' => 'required',
+            'keterangan' => 'required',
         ]);
         Book::create($validatedData);
 
@@ -103,9 +108,14 @@ class BookController extends Controller
             'id' => 'required',
             'rak_id' => 'required',
             'pengarang' => 'required',
+            'jilid' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
+            'kota_terbit' => 'required',
+            'sumber_asal' => 'required',
+            'klasifikasi' => 'required',
             'eksemplar' => 'required',
+            'keterangan' => 'required',
         ];
         if ($request->judul != $book->judul) {
             $rules['judul'] = 'required|unique:books';

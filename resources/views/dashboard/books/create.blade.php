@@ -79,6 +79,16 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">Jilid</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="jilid"
+                                        placeholder="Masukkan Jilid..." required>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">Penerbit</p>
                                 </div>
                                 <div class="col-sm-9">
@@ -99,11 +109,51 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
+                                    <p class="mb-0">Kota Terbit</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Masukkan Kota Terbit..."
+                                        name="kota_terbit" required id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Sumber Asal</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Masukkan Sumber Asal..."
+                                        name="sumber_asal" required id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Klasifikasi</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Masukkan Klasifikasi..."
+                                        name="klasifikasi" required id="intTextBox3">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
                                     <p class="mb-0">Eksemplar</p>
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control" name="eksemplar"
                                         placeholder="Masukkan Eksemplar..." required id="intTextBox2">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Keterangan</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" name="keterangan"
+                                        placeholder="Masukkan Keterangan..." required value="-" id="intTextBox2">
                                 </div>
                             </div>
                             <hr>
