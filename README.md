@@ -2,40 +2,34 @@
 ![Logo](https://i.ibb.co/5ThtRFq/Screenshot-2022-06-17-193018.png)
 [![CodeQL](https://github.com/paley777/siperpus/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/paley777/siperpus/actions/workflows/codeql-analysis.yml)
 
-# Sistem Informasi Perpustakaan (SIPerpus)
+# Library Information System (SIPerpus)
 
-Sistem Informasi Perpustakaan (SIPerpus) adalah sistem berbasis website
-dengan Framework Laravel 8. SIPerpus berfungsi untuk mempermudah
-manajemen perpustakaan. Sistem ini mengambil kasus perpustakaan di SMP Negeri 1 Kota Bengkulu.
+The Library Information System (SIPerpus) is a website-based system
+with the Laravel 8 Framework. SIPerpus functions to make things easier
+library management. This system takes the case of the library at SMP Negeri 1 Bengkulu City.
 
-
-
-## Integrasi
-Sistem ini selain menggunakan Laravel 8. Juga mengintegrasikan Framework
-Bootstrap sebagai front-end. Sistem ini menggunakan database SQL dan dalam 
-pengembangannya menggunakan software MySQL Workbench.
+## Integration
+Apart from using Laravel 8, this system also integrates the Framework
+Bootstrap as front-end. This system uses SQL database and in 
+The development uses MySQL Workbench software.
 
 
-## Fitur Pengguna
+## User Features
 
-- Manajemen Olah Data
-- Manajemen Transaksi (Peminjaman dan Pengembalian Buku)
-- Manajemen Laporan
+- Data Processing Management
+- Transaction Management (Borrowing and Returning Books)
+- Report Management
 
-
-
-
-
-## Fitur Sistem
+## System Features
 
 - Laravel 8
 - Using Eloquent from Laravel
-- Templating for header and footer
-- Full CRUD Integrating
+- Templates for headers and footers
+- Full CRUD integration
 - Authentication from Laravel
 - Upload and Update Images
-- Barcode generate and scan
-- Paginations
+- Generate and scan barcodes
+- Pagination
 - Search Data
 - Import Data via Spreadsheet
 
@@ -98,6 +92,6 @@ Start the server
 ![App Screenshot](https://i.ibb.co/x5ZFZyB/Screenshot-2022-06-17-193220.png)
 
 
-## Saran
+## Suggestion
 
-Untuk saran dan masukan sistem ini harap berkenan email ke valleryan1212@gmail.com
+For suggestions and input on this system, please email valleryan1212@gmail.com
